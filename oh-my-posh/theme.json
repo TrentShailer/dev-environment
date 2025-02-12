@@ -1,0 +1,93 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "primary": "#ca9ee6",
+    "text": "#c6d0f5"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ if .Root }}root{{ else }}{{ .UserName }}{{ end }}",
+          "foreground": "p:primary",
+          "type": "session",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " <d>on</d> {{ .HostName }}",
+          "foreground": "p:primary",
+          "type": "session",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ if .WSL }} <d>inside</d> wsl{{ end }}",
+          "foreground": "p:primary",
+          "type": "os",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
+            "folder_icon": "..",
+            "folder_separator_icon": "/",
+            "home_icon": "~",
+            "max_depth": 3,
+            "style": "agnoster_short"
+          },
+          "template": " <d>in</d> {{ .Path }}",
+          "foreground": "p:primary",
+          "type": "path",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "branch_icon": "\u21f5 ",
+            "cache_duration": "none"
+          },
+          "template": " <d>on</d> {{ .HEAD }}",
+          "foreground": "p:primary",
+          "type": "git",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": ">",
+          "foreground": "p:text",
+          "type": "text",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "terminal_background": "#303446",
+  "enable_cursor_positioning": true,
+  "patch_pwsh_bleed": true,
+  "final_space": true,
+  "version": 3,
+  "upgrade": {
+    "source": "cdn",
+    "auto": false,
+    "notice": false
+  }
+}

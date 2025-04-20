@@ -17,13 +17,6 @@
   "terminal.integrated.fontLigatures.enabled": true,
   ```
 
-## Oh-My-Posh Shell Setup
-
-* <https://ohmyposh.dev/docs/installation/windows>
-* <https://ohmyposh.dev/docs/installation/linux>
-* <https://ohmyposh.dev/docs/installation/prompt>
-* <https://ohmyposh.dev/docs/installation/customize>
-
 ## Theme
 
 * <https://catppuccin.com/>

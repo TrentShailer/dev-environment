@@ -58,9 +58,8 @@
     // Git
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
-    "git.autofetch": true,
-    "git.enableCommitSigning": true,
     "github.gitProtocol": "ssh",
+    "git.enableCommitSigning": true,
     // Rust
     "rust-analyzer.check.command": "clippy",
     "rust-analyzer.imports.granularity.enforce": true,

@@ -15,3 +15,9 @@ Host server
 Host github.com
 	IdentityFile ~/.ssh/id_ed25519_sk_desktop
 ```
+
+## Git
+
+* `git config --global user.signingkey path/to/key.pub`
+* `git config --global gpg.format ssh`
+* `git config --global commit.gpgsign true`

@@ -12,21 +12,22 @@
     "catppuccin-icons.associations.extensions": {
         "spv": "shader"
     },
-    // Font
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-    "terminal.integrated.fontLigatures.enabled": true,
-    "terminal.integrated.cursorStyle": "line",
-    // Editor Style
-    "editor.bracketPairColorization.enabled": false,
-    "terminal.integrated.minimumContrastRatio": 1,
-    "editor.renderFinalNewline": "dimmed",
+    // Editor Appearance
+    "git.decorations.enabled": false,
     "editor.foldingHighlight": false,
     "editor.minimap.enabled": false,
     "window.zoomLevel": 1,
     "editor.rulers": [
         100
     ],
+    // Text
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.minimumContrastRatio": 1,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.renderFinalNewline": "dimmed",
     // Editor Behaviour
     "update.showReleaseNotes": false,
     "editor.linkedEditing": true,
@@ -46,12 +47,20 @@
         "workbench.colorTheme",
         "editor.fontSize"
     ],
-    // LLMs
+    // LLMs and other garbage
     "chat.commandCenter.enabled": false,
+    "window.commandCenter": false,
+    "telemetry.feedback.enabled": false,
+    "inlineChat.lineNaturalLanguageHint": false,
+    "inlineChat.lineEmptyHint": false,
+    "terminal.integrated.initialHint": false,
+    "workbench.editor.empty.hint": "hidden",
     // Git
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "git.autofetch": true,
+    "git.enableCommitSigning": true,
+    "github.gitProtocol": "ssh",
     // Rust
     "rust-analyzer.check.command": "clippy",
     "rust-analyzer.imports.granularity.enforce": true,
@@ -60,5 +69,22 @@
     // Todo Tree
     "todo-tree.general.showActivityBarBadge": false,
     "todo-tree.tree.showCountsInTree": true,
-    "-------- uncategorised --------": "",
+    // Markdown
+    "markdown.preview.scrollEditorWithPreview": false,
+    "markdown.preview.scrollPreviewWithEditor": false,
+    // Harper
+    "harper.dialect": "British",
+    "harper.linters.SpelledNumbers": true,
+    "harper.linters.ToDoHyphen": false,
+    // TOML
+    "evenBetterToml.formatter.allowedBlankLines": 1,
+    "evenBetterToml.formatter.columnWidth": 100,
+    "evenBetterToml.formatter.arrayAutoCollapse": true,
+    "evenBetterToml.formatter.arrayAutoExpand": false,
+    "evenBetterToml.formatter.arrayTrailingComma": true,
+    "evenBetterToml.formatter.reorderKeys": true,
+    "evenBetterToml.formatter.reorderArrays": true,
+    "evenBetterToml.formatter.reorderInlineTables": false,
+    // Uncategorised
+    "-----": "-----",
 }

@@ -13,6 +13,7 @@
         "spv": "shader"
     },
     // Editor Appearance
+    "editor.unicodeHighlight.nonBasicASCII": false,
     "git.decorations.enabled": false,
     "editor.foldingHighlight": false,
     "editor.minimap.enabled": false,
@@ -77,13 +78,12 @@
     "harper.linters.ToDoHyphen": false,
     // TOML
     "evenBetterToml.formatter.allowedBlankLines": 1,
-    "evenBetterToml.formatter.columnWidth": 100,
-    "evenBetterToml.formatter.arrayAutoCollapse": true,
-    "evenBetterToml.formatter.arrayAutoExpand": false,
-    "evenBetterToml.formatter.arrayTrailingComma": true,
     "evenBetterToml.formatter.reorderKeys": true,
     "evenBetterToml.formatter.reorderArrays": true,
-    "evenBetterToml.formatter.reorderInlineTables": false,
+    "evenBetterToml.formatter.arrayTrailingComma": true,
+    "evenBetterToml.formatter.columnWidth": 100,
+    "evenBetterToml.formatter.arrayAutoExpand": true,
+    "evenBetterToml.formatter.arrayAutoCollapse": true,
     // Uncategorised
     "-----": "-----",
 }

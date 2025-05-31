@@ -1,0 +1,8 @@
+! // GitHub feed -> explore similar repositories
+github.com##aside.feed-right-sidebar 
+
+! // Gmail, Google Drive, Google Docs -> Try Gemini
+mail.google.com,drive.google.com,docs.google.com##div[role="tooltip"]:has-text(Try Gemini):upward(3):remove()
+
+! // Gmail -> Upgrade
+mail.google.com##span:has-text(Upgrade):upward(9):remove()

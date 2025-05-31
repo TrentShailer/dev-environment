@@ -1,6 +1,9 @@
 ! // GitHub feed -> explore similar repositories
 github.com##aside.feed-right-sidebar 
 
+! // GitHub Sidebar -> Try enterprise
+github.com##span:has-text(Try Enterprise):upward(2):remove()
+
 ! // Gmail, Google Drive, Google Docs -> Try Gemini
 mail.google.com,drive.google.com,docs.google.com##div[role="tooltip"]:has-text(Try Gemini):upward(3):remove()
 

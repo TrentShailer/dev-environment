@@ -1,0 +1,32 @@
+{
+    "$schema": "https://aka.ms/winget-settings.schema.json",
+    "visual": {
+        "anonymizeDisplayedPaths": true
+    },
+    "configureBehavior": {
+        "defaultModuleRoot": "C:/Users/trent/Files/Packages/WinGet/"
+    },
+    "downloadBehavior": {
+        "defaultDownloadDirectory": "C:/Users/trent/Files/Packages/WinGet/"
+    },
+    "interactivity": {
+        "disable": false
+    },
+    "source": {
+        "autoUpdateIntervalInMinutes": 5
+    },
+    "telemetry": {
+        "disable": true
+    },
+    "uninstallBehavior": {
+        "purgePortablePackage": true
+    },
+    "logging": {
+        "level": "info"
+    },
+    "installBehavior": {
+        "portablePackageUserRoot": "C:/Users/trent/Files/Packages/WinGet",
+        "portablePackageMachineRoot": "C:/Program Files/Packages/WinGet/",
+        "defaultInstallRoot": "C:/Users/trent/Files/Packages/WinGet/"
+    }
+}

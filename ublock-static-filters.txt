@@ -9,3 +9,6 @@ mail.google.com,drive.google.com,docs.google.com##div[role="tooltip"]:has-text(T
 
 ! // Gmail -> Upgrade
 mail.google.com##span:has-text(Upgrade):upward(9):remove()
+
+! // Bitwarden -> More from Bitwarden
+bitwarden.com##span:has-text(More from Bitwarden):upward(1):remove()

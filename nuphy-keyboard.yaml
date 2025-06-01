@@ -1,0 +1,12 @@
+keys:
+  capslock: lctrl
+  screenshot:
+    key: f13
+  assistant:
+    key: ins
+  pgup:
+    key: home
+  pgdn:
+    key: pgup
+  home:
+    key: pgdn

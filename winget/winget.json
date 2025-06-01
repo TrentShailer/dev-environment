@@ -32,13 +32,7 @@
 					"PackageIdentifier": "Microsoft.PowerShell"
 				},
 				{
-					"PackageIdentifier": "Yubico.Authenticator"
-				},
-				{
 					"PackageIdentifier": "Valve.Steam"
-				},
-				{
-					"PackageIdentifier": "Microsoft.PowerToys"
 				},
 				{
 					"PackageIdentifier": "Microsoft.WSL"
@@ -51,6 +45,9 @@
 				},
 				{
 					"PackageIdentifier": "Rustlang.Rustup"
+				},
+				{
+					"PackageIdentifier": "Microsoft.VisualStudio.2022.BuildTools"
 				},
 				{
 					"PackageIdentifier": "KhronosGroup.VulkanSDK"
@@ -66,9 +63,6 @@
 				},
 				{
 					"PackageIdentifier": "ImageMagick.ImageMagick"
-				},
-				{
-					"PackageIdentifier": "FilesCommunity.Files"
 				}
 			],
 			"SourceDetails": {

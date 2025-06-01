@@ -1,4 +1,4 @@
-# winget
+# WinGet
 
 ## MS Store Packages (In Order)
 
@@ -10,6 +10,10 @@
 ## Importing
 
 * `winget import winget/winget.json --accept-package-agreements --accept-source-agreements --disable-interactivity`
+
+## Updating
+
+* `winget upgrade --all --uninstall-previous --disable-interactivity --accept-package-agreements --accept-source-agreements --silent`
 
 ## Settings
 

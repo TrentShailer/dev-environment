@@ -65,6 +65,7 @@
     "rust-analyzer.check.command": "clippy",
     "rust-analyzer.imports.granularity.enforce": true,
     "rust-analyzer.imports.preferNoStd": true,
+    "rust-analyzer.cargo.features": "all",
     "evenBetterToml.formatter.trailingNewline": true,
     // Todo Tree
     "todo-tree.general.showActivityBarBadge": false,

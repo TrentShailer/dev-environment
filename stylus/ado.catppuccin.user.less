@@ -81,7 +81,7 @@
     --palette-primary-tint-30: 55, 96, 145; /* Pill BG  */
     --palette-primary-tint-40: 34, 59, 89;
 
-    --palette-neutral-100: #rgb(@text); /* Text */ 
+    --palette-neutral-100: #rgb(@text)[]; /* Text */ 
     --palette-neutral-80: 225, 223, 221; /* ? */ 
     --palette-neutral-70: 190, 187, 184; /* ? */ 
     --palette-neutral-60: 161, 159, 157; /* Search_border */ 
@@ -186,7 +186,7 @@
 }
 
 #rgb(@hex) {
-  @result: red(@hex), blue(@hex), green(@hex);
+  @result: red(@hex), green(@hex), blue(@hex);
 }
 
 /* deno-fmt-ignore */

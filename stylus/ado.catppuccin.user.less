@@ -67,40 +67,36 @@
       }
     }
 
-    --palette-primary: @accent;
-    --palette-primary-darken-6: @accent;
-    --palette-primary-darkened-6: @accent;
-    --palette-primary-darken-10: @accent;
-    --palette-primary-darkened-10: @accent;
 
-    --palette-primary-shade-30: rgb(184, 216, 255);
-    --palette-primary-shade-20: rgb(152, 198, 255); /* URL colour + Azure icon */
-    --palette-primary-shade-10: rgb(121, 181, 255);
+    --palette-primary-darken-6: rgba(0, 103, 181, 1);
+    --palette-primary-darken-10: rgba(0, 120, 212, 1);
+    --palette-primary-darkened-6: 0, 103, 181;
+    --palette-primary-darkened-10: 0, 120, 212;
+    --palette-primary-shade-30: 184, 216, 255;
+    --palette-primary-shade-20: 152, 198, 255; /* URL colour + Azure icon */
+    --palette-primary-shade-10: 121, 181, 255;
+    --palette-primary: 0, 129, 227;
+    --palette-primary-tint-10: 82, 143, 217;
+    --palette-primary-tint-20: 73, 126, 191;
+    --palette-primary-tint-30: 55, 96, 145; /* Pill BG  */
+    --palette-primary-tint-40: 34, 59, 89;
 
-    --palette-primary-tint-10: rgb(82, 143, 217);
-    --palette-primary-tint-20: rgb(73, 126, 191);
-    --palette-primary-tint-30: rgb(55, 96, 145); /* Pill BG  */
-    --palette-primary-tint-40: rgb(34, 59, 89);
+    --palette-neutral-100: #rgb(@text); /* Text */ 
+    --palette-neutral-80: 225, 223, 221; /* ? */ 
+    --palette-neutral-70: 190, 187, 184; /* ? */ 
+    --palette-neutral-60: 161, 159, 157; /* Search_border */ 
+    --palette-neutral-30: 121, 119, 117; /* ? */ 
+    --palette-neutral-20: 96, 94, 92; /* Card_Border */ 
+    --palette-neutral-10: 72, 70, 68; /* ? */ 
+    --palette-neutral-8: #rgb(@mantle)[]; /* Sidebar_BG */ 
+    --palette-neutral-6: #rgb(@mantle)[]; /* Column_BG */ 
+    --palette-neutral-4: 41, 40, 39; /* ? */ 
+    --palette-neutral-2: #rgb(@base)[]; /* Main_BG */ 
+    --palette-neutral-0: #rgb(@base)[]; /* Cards_BG */ 
 
-    --palette-neutral-100: @text;
-    --palette-neutral-80: @subtext1;
-    --palette-neutral-70: @subtext0;
-    --palette-neutral-60: @overlay2; /* Search border */
-    --palette-neutral-30: @overlay1;
-    --palette-neutral-20: @overlay0; /* Card Border */
-    --palette-neutral-10: @surface2;
-    --palette-neutral-8: @mantle; /* Sidebar BG */
-    --palette-neutral-6: @mantle; /* Column BG */
-    --palette-neutral-4: @base;
-    --palette-neutral-2: @base; /* Main BG */
-    --palette-neutral-0: @base; /* Cards BG */
-
-    --palette-error: @red;
-    --palette-error-6: @red;
-    --palette-error-10: @red;
-
-    --test: #c6d0f5;
-
+    --palette-error: rgba(184, 14, 28, 1);
+    --palette-error-6: rgba(203, 15, 31, 1);
+    --palette-error-10: rgba(232, 17, 35, 1);
     --palette-black-alpha-0: rgba(var(--palette-neutral-100), 0);
     --palette-black-alpha-2: rgba(var(--palette-neutral-100), 0.02);
     --palette-black-alpha-4: rgba(var(--palette-neutral-100), 0.04);
@@ -113,64 +109,49 @@
     --palette-black-alpha-70: rgba(var(--palette-neutral-100), 0.7);
     --palette-black-alpha-80: rgba(var(--palette-neutral-100), 0.86);
     --palette-black-alpha-100: rgba(var(--palette-neutral-100), 1);
-
-    --palette-accent1-light: @red;
-    --palette-accent1: @red;
-    --palette-accent1-dark: @red;
-    --palette-accent2-light: @green;
-    --palette-accent2: @green;
-    --palette-accent2-dark: @green;
-    --palette-accent3-light: @yellow;
-    --palette-accent3: @yellow;
-    --palette-accent3-dark: @yellow;
-
-    --background-color: @base; /* Top Nav BG */
-
-    --communication-foreground: rgba(var(--palette-primary-shade-20), 1); /* Link */
+    --palette-accent1-light: 68, 39, 38;
+    --palette-accent1: 241, 112, 123;
+    --palette-accent1-dark: 241, 112, 123;
+    --palette-accent2-light: 57, 61, 27;
+    --palette-accent2: 146, 195, 83;
+    --palette-accent2-dark: 146, 195, 83;
+    --palette-accent3-light: 67, 53, 25;
+    --palette-accent3: 253, 185, 19;
+    --palette-accent3-dark: 253, 185, 19;
+    --background-color: rgba(var(--palette-neutral-0), 1);
+    --communication-foreground: rgba(var(--palette-primary-shade-20), 1);/* Link */
     --communication-background: rgba(0, 120, 212, 1);
-
     --status-info-foreground: rgba(97, 168, 255, 1);
     --status-info-background: rgba(0, 120, 212, 1);
-
-    --status-error-foreground: rgba(var(--palette-accent1), 1); /* TODO these will look bad */
+    --status-error-foreground: rgba(var(--palette-accent1), 1);
     --status-error-background: rgba(var(--palette-accent1-light), 1);
     --status-error-text: rgba(var(--palette-accent1), 1);
     --status-error-strong: rgba(var(--palette-accent1-dark), 1);
-
     --status-success-foreground: rgba(var(--palette-accent2-dark), 1);
     --status-success-background: rgba(var(--palette-accent2-light), 1);
-    --status-success-text: @green;
-
+    --status-success-text: rgba(127, 184, 0, 1);
     --status-warning-icon-foreground: rgba(177, 133, 37, 1);
     --status-warning-foreground: rgba(var(--palette-accent3), 1);
     --status-warning-background: rgba(var(--palette-accent3-light), 1);
     --status-warning-text: rgba(var(--palette-accent3), 1);
-
-    --text-primary-color: rgba(var(--palette-neutral-100), 0.95);
-    --text-secondary-color: rgba(var(--palette-neutral-100), 0.80);
-    --text-disabled-color: rgba(var(--palette-neutral-100), 0.5);
+    --text-primary-color: rgba(var(--palette-neutral-100), .95);
+    --text-secondary-color: rgba(var(--palette-neutral-100), .80);
+    --text-disabled-color: rgba(var(--palette-neutral-100), .5);
     --text-on-communication-background: rgba(var(--palette-neutral-100), 1);
-
-    --border-subtle-color: rgba(var(--palette-neutral-100), 0.08);
-    --splitter-border-color: rgba(var(--palette-neutral-100), 0.42);
-
+    --border-subtle-color: rgba(var(--palette-neutral-100), .08);
+    --splitter-border-color: rgba(var(--palette-neutral-100), .42);
     --callout-background-color: rgba(var(--palette-neutral-6), 1);
     --callout-filtered-background-color: rgba(var(--palette-neutral-0), 0.80);
-    --callout-shadow-color: rgba(0, 0, 0, 0.4);
-    --callout-shadow-secondary-color: rgba(0, 0, 0, 0.32);
-
-    --panel-shadow-color: rgba(0, 0, 0, 0.67);
-    --panel-shadow-secondary-color: rgba(0, 0, 0, 0.53);
-
+    --callout-shadow-color: rgba(0, 0, 0, .4);
+    --callout-shadow-secondary-color: rgba(0, 0, 0, .32);
+    --panel-shadow-color: rgba(0, 0, 0, .67);
+    --panel-shadow-secondary-color: rgba(0, 0, 0, .53);
     --focus-pulse-max-color: rgba(var(--palette-primary-shade-10), 0.55);
     --focus-pulse-min-color: rgba(var(--palette-primary-shade-10), 0.35);
     --focus-border-color: rgba(var(--palette-primary-shade-10), 1);
-
     --third-party-icon-filter: invert(100%);
-
     --component-label-default-color: rgba(var(--palette-neutral-10), 1);
     --component-label-default-color-hover: rgba(var(--palette-neutral-20), 1);
-
     --component-grid-row-hover-color: rgba(var(--palette-neutral-100), 0.04);
     --component-grid-selected-row-color: rgba(var(--palette-primary-tint-40), 1);
     --component-grid-focus-border-color: rgba(var(--palette-primary), 1);
@@ -180,14 +161,11 @@
     --component-grid-action-selected-cell-hover-color: rgba(var(--palette-primary-tint-30), 0.4);
     --component-grid-cell-bottom-border-color: rgba(var(--palette-neutral-8), 1);
     --component-grid-drag-source-color: rgba(var(--palette-neutral-0), 0.30);
-
     --search-match-background: rgba(92, 45, 145, 1);
     --search-selected-match-background: rgba(131, 0, 163, 1);
     --icon-folder-color: #dcb67a;
-
     --component-errorBoundary-border-color: rgba(var(--palette-accent1), 1);
     --component-errorBoundary-background-color: rgba(var(--palette-accent1-light), 1);
-
     --nav-header-background: var(--background-color);
     --nav-header-item-hover-background: rgba(var(--palette-neutral-100), 0.02);
     --nav-header-active-item-background: rgba(var(--palette-neutral-100), 0.08);
@@ -195,19 +173,20 @@
     --nav-header-text-secondary-color: var(--text-secondary-color);
     --nav-header-text-disabled-color: var(--text-disabled-color);
     --nav-header-product-color: rgba(var(--palette-primary-shade-20), 1);
-
     --nav-vertical-background-color: rgba(var(--palette-neutral-8), 1);
     --nav-vertical-item-hover-background: rgba(var(--palette-neutral-100), 0.04);
     --nav-vertical-active-group-background: rgba(var(--palette-neutral-100), 0.06);
     --nav-vertical-active-item-background: rgba(var(--palette-neutral-100), 0.12);
     --nav-vertical-text-primary-color: var(--text-primary-color);
     --nav-vertical-text-secondary-color: var(--text-secondary-color);
-
     --component-menu-selected-item-background: rgba(var(--palette-neutral-100), 0.04);
-
     --component-htmlEditor-background-color: rgba(255, 255, 255, 1);
-    --component-htmlEditor-foreground-color: rgba(0, 0, 0, 0.9);
+    --component-htmlEditor-foreground-color: rgba(0, 0, 0, .9);
   }
+}
+
+#rgb(@hex) {
+  @result: red(@hex), blue(@hex), green(@hex);
 }
 
 /* deno-fmt-ignore */

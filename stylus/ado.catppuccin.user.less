@@ -74,37 +74,39 @@
     --palette-primary-darkened-10: @accent;
 
     --palette-primary-shade-30: rgb(184, 216, 255);
-    --palette-primary-shade-20: rgb(152, 198, 255);
+    --palette-primary-shade-20: rgb(152, 198, 255); /* URL colour + Azure icon */
     --palette-primary-shade-10: rgb(121, 181, 255);
 
     --palette-primary-tint-10: rgb(82, 143, 217);
     --palette-primary-tint-20: rgb(73, 126, 191);
-    --palette-primary-tint-30: rgb(55, 96, 145);
+    --palette-primary-tint-30: rgb(55, 96, 145); /* Pill BG  */
     --palette-primary-tint-40: rgb(34, 59, 89);
 
     --palette-neutral-100: @text;
     --palette-neutral-80: @subtext1;
     --palette-neutral-70: @subtext0;
-    --palette-neutral-60: @overlay2;
+    --palette-neutral-60: @overlay2; /* Search border */
     --palette-neutral-30: @overlay1;
-    --palette-neutral-20: @overlay0;
+    --palette-neutral-20: @overlay0; /* Card Border */
     --palette-neutral-10: @surface2;
-    --palette-neutral-8: @surface1;
-    --palette-neutral-6: @surface0;
+    --palette-neutral-8: @mantle; /* Sidebar BG */
+    --palette-neutral-6: @mantle; /* Column BG */
     --palette-neutral-4: @base;
-    --palette-neutral-2: @mantle;
-    --palette-neutral-0: @crust;
+    --palette-neutral-2: @base; /* Main BG */
+    --palette-neutral-0: @base; /* Cards BG */
 
     --palette-error: @red;
     --palette-error-6: @red;
     --palette-error-10: @red;
 
+    --test: #c6d0f5;
+
     --palette-black-alpha-0: rgba(var(--palette-neutral-100), 0);
     --palette-black-alpha-2: rgba(var(--palette-neutral-100), 0.02);
     --palette-black-alpha-4: rgba(var(--palette-neutral-100), 0.04);
-    --palette-black-alpha-6: rgba(var(--palette-neutral-100), 0.08);
+    --palette-black-alpha-6: rgba(var(--palette-neutral-100), 0.08); /* Dropdown BG */
     --palette-black-alpha-8: rgba(var(--palette-neutral-100), 0.12);
-    --palette-black-alpha-10: rgba(var(--palette-neutral-100), 0.18);
+    --palette-black-alpha-10: rgba(var(--palette-neutral-100), 0.18); /* Side bar border */
     --palette-black-alpha-20: rgba(var(--palette-neutral-100), 0.29);
     --palette-black-alpha-30: rgba(var(--palette-neutral-100), 0.40);
     --palette-black-alpha-60: rgba(var(--palette-neutral-100), 0.57);
@@ -122,9 +124,9 @@
     --palette-accent3: @yellow;
     --palette-accent3-dark: @yellow;
 
-    --background-color: @base;
+    --background-color: @base; /* Top Nav BG */
 
-    --communication-foreground: rgba(var(--palette-primary-shade-20), 1);
+    --communication-foreground: rgba(var(--palette-primary-shade-20), 1); /* Link */
     --communication-background: rgba(0, 120, 212, 1);
 
     --status-info-foreground: rgba(97, 168, 255, 1);

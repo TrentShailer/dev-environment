@@ -67,11 +67,11 @@
       }
     }
 
-    --palette-primary: rgb(0, 129, 227);
-    --palette-primary-darken-6: rgba(0, 103, 181, 1);
-    --palette-primary-darkened-6: rgb(0, 103, 181);
-    --palette-primary-darken-10: rgba(0, 120, 212, 1);
-    --palette-primary-darkened-10: rgb(0, 120, 212);
+    --palette-primary: @accent;
+    --palette-primary-darken-6: @accent;
+    --palette-primary-darkened-6: @accent;
+    --palette-primary-darken-10: @accent;
+    --palette-primary-darkened-10: @accent;
 
     --palette-primary-shade-30: rgb(184, 216, 255);
     --palette-primary-shade-20: rgb(152, 198, 255);
@@ -82,22 +82,22 @@
     --palette-primary-tint-30: rgb(55, 96, 145);
     --palette-primary-tint-40: rgb(34, 59, 89);
 
-    --palette-neutral-100: rgb(255, 255, 255);
-    --palette-neutral-80: rgb(225, 223, 221);
-    --palette-neutral-70: rgb(190, 187, 184);
-    --palette-neutral-60: rgb(161, 159, 157);
-    --palette-neutral-30: rgb(121, 119, 117);
-    --palette-neutral-20: rgb(96, 94, 92);
-    --palette-neutral-10: rgb(72, 70, 68);
-    --palette-neutral-8: rgb(59, 58, 57);
-    --palette-neutral-6: rgb(50, 49, 48);
-    --palette-neutral-4: rgb(41, 40, 39);
-    --palette-neutral-2: rgb(37, 36, 35);
-    --palette-neutral-0: rgb(32, 31, 30);
+    --palette-neutral-100: @text;
+    --palette-neutral-80: @subtext1;
+    --palette-neutral-70: @subtext0;
+    --palette-neutral-60: @overlay2;
+    --palette-neutral-30: @overlay1;
+    --palette-neutral-20: @overlay0;
+    --palette-neutral-10: @surface2;
+    --palette-neutral-8: @surface1;
+    --palette-neutral-6: @surface0;
+    --palette-neutral-4: @base;
+    --palette-neutral-2: @mantle;
+    --palette-neutral-0: @crust;
 
-    --palette-error: rgba(184, 14, 28, 1);
-    --palette-error-6: rgba(203, 15, 31, 1);
-    --palette-error-10: rgba(232, 17, 35, 1);
+    --palette-error: @red;
+    --palette-error-6: @red;
+    --palette-error-10: @red;
 
     --palette-black-alpha-0: rgba(var(--palette-neutral-100), 0);
     --palette-black-alpha-2: rgba(var(--palette-neutral-100), 0.02);
@@ -112,31 +112,32 @@
     --palette-black-alpha-80: rgba(var(--palette-neutral-100), 0.86);
     --palette-black-alpha-100: rgba(var(--palette-neutral-100), 1);
 
-    --palette-accent1-light: rgb(68, 39, 38);
-    --palette-accent1: rgb(241, 112, 123);
-    --palette-accent1-dark: rgb(241, 112, 123);
-    --palette-accent2-light: rgb(57, 61, 27);
-    --palette-accent2: rgb(146, 195, 83);
-    --palette-accent2-dark: rgb(146, 195, 83);
-    --palette-accent3-light: rgb(67, 53, 25);
-    --palette-accent3: rgb(253, 185, 19);
-    --palette-accent3-dark: rgb(253, 185, 19);
+    --palette-accent1-light: @red;
+    --palette-accent1: @red;
+    --palette-accent1-dark: @red;
+    --palette-accent2-light: @green;
+    --palette-accent2: @green;
+    --palette-accent2-dark: @green;
+    --palette-accent3-light: @yellow;
+    --palette-accent3: @yellow;
+    --palette-accent3-dark: @yellow;
 
-    --background-color: rgba(var(--palette-neutral-0), 1);
+    --background-color: @base;
+
     --communication-foreground: rgba(var(--palette-primary-shade-20), 1);
     --communication-background: rgba(0, 120, 212, 1);
 
     --status-info-foreground: rgba(97, 168, 255, 1);
     --status-info-background: rgba(0, 120, 212, 1);
 
-    --status-error-foreground: rgba(var(--palette-accent1), 1);
+    --status-error-foreground: rgba(var(--palette-accent1), 1); /* TODO these will look bad */
     --status-error-background: rgba(var(--palette-accent1-light), 1);
     --status-error-text: rgba(var(--palette-accent1), 1);
     --status-error-strong: rgba(var(--palette-accent1-dark), 1);
 
     --status-success-foreground: rgba(var(--palette-accent2-dark), 1);
     --status-success-background: rgba(var(--palette-accent2-light), 1);
-    --status-success-text: rgba(127, 184, 0, 1);
+    --status-success-text: @green;
 
     --status-warning-icon-foreground: rgba(177, 133, 37, 1);
     --status-warning-foreground: rgba(var(--palette-accent3), 1);

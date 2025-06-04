@@ -1,0 +1,200 @@
+/* ==UserStyle==
+@name Azure DevOps Catppuccin
+@namespace github.com/trentshailer/dev-environment/stylus
+@homepageURL https://github.com/trentshailer/dev-environment/tree/main/stylus/ado.catppuccin.user.less
+@version 2025.06.03
+@updateURL https://github.com/trentshailer/dev-environment/raw/main/stylus/ado.catppuccin.user.less
+@description Soothing pastel theme for Azure DevOps
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@-moz-document domain("dev.azure.com") {
+  :root {
+    @media (prefers-color-scheme: light) {
+      #catppuccin(@lightFlavor);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #catppuccin(@darkFlavor);
+    }
+  }
+
+  #catppuccin(@flavor) {
+    @rosewater: @catppuccin[@@flavor][@rosewater];
+    @flamingo: @catppuccin[@@flavor][@flamingo];
+    @pink: @catppuccin[@@flavor][@pink];
+    @mauve: @catppuccin[@@flavor][@mauve];
+    @red: @catppuccin[@@flavor][@red];
+    @maroon: @catppuccin[@@flavor][@maroon];
+    @peach: @catppuccin[@@flavor][@peach];
+    @yellow: @catppuccin[@@flavor][@yellow];
+    @green: @catppuccin[@@flavor][@green];
+    @teal: @catppuccin[@@flavor][@teal];
+    @sky: @catppuccin[@@flavor][@sky];
+    @sapphire: @catppuccin[@@flavor][@sapphire];
+    @blue: @catppuccin[@@flavor][@blue];
+    @lavender: @catppuccin[@@flavor][@lavender];
+    @text: @catppuccin[@@flavor][@text];
+    @subtext1: @catppuccin[@@flavor][@subtext1];
+    @subtext0: @catppuccin[@@flavor][@subtext0];
+    @overlay2: @catppuccin[@@flavor][@overlay2];
+    @overlay1: @catppuccin[@@flavor][@overlay1];
+    @overlay0: @catppuccin[@@flavor][@overlay0];
+    @surface2: @catppuccin[@@flavor][@surface2];
+    @surface1: @catppuccin[@@flavor][@surface1];
+    @surface0: @catppuccin[@@flavor][@surface0];
+    @base: @catppuccin[@@flavor][@base];
+    @mantle: @catppuccin[@@flavor][@mantle];
+    @crust: @catppuccin[@@flavor][@crust];
+    @accent: @catppuccin[@@flavor][@@accentColor];
+
+    color-scheme: if(@flavor = latte, light, dark);
+
+    ::selection {
+      background-color: fade(@accent, 30%);
+    }
+
+    input,
+    textarea {
+      &::placeholder {
+        color: @subtext0 !important;
+      }
+    }
+
+
+    --palette-primary-darken-6: rgba(0, 103, 181, 1);
+    --palette-primary-darken-10: rgba(0, 120, 212, 1);
+    --palette-primary-darkened-6: 0, 103, 181;
+    --palette-primary-darkened-10: 0, 120, 212;
+    --palette-primary-shade-30: 184, 216, 255;
+    --palette-primary-shade-20: #rgb(@accent); /* URL colour + Azure icon */
+    --palette-primary-shade-10: 121, 181, 255;
+    --palette-primary: 0, 129, 227;
+    --palette-primary-tint-10: 82, 143, 217;
+    --palette-primary-tint-20: 73, 126, 191;
+    --palette-primary-tint-30: #rgb(@surface0); /* Pill BG  */
+    --palette-primary-tint-40: 34, 59, 89;
+
+    --palette-neutral-100: #rgb(@text)[]; /* Text */ 
+    --palette-neutral-80: 225, 223, 221; /* ? */ 
+    --palette-neutral-70: 190, 187, 184; /* ? */ 
+    --palette-neutral-60: #rgb(#overlay0)[]; /* Search_border */ 
+    --palette-neutral-30: 121, 119, 117; /* ? */ 
+    --palette-neutral-20: #rgb(#overlay0)[]; /* Card_Border */ 
+    --palette-neutral-10: #rgb(@overlay0)[]; /* Outline > Cards > Details button */ 
+    --palette-neutral-8: #rgb(@mantle)[]; /* Sidebar_BG */ 
+    --palette-neutral-6: #rgb(@surface0)[]; /* Column_BG */ 
+    --palette-neutral-4: #rgb(@mantle)[]; /* Link_GitHub */ 
+    --palette-neutral-2: #rgb(@base)[]; /* Main_BG */ 
+    --palette-neutral-0: #rgb(@base)[]; /* Cards_BG */ 
+
+    --palette-error: rgba(184, 14, 28, 1);
+    --palette-error-6: rgba(203, 15, 31, 1);
+    --palette-error-10: rgba(232, 17, 35, 1);
+    --palette-black-alpha-0: rgba(var(--palette-neutral-100), 0);
+    --palette-black-alpha-2: rgba(var(--palette-neutral-100), 0.02);
+    --palette-black-alpha-4: rgba(var(--palette-neutral-100), 0.04);
+    --palette-black-alpha-6: @overlay1; /* Dropdown BG */
+    --palette-black-alpha-8: rgba(var(--palette-neutral-100), 0.12);
+    --palette-black-alpha-10: rgba(var(--palette-neutral-100), 0.18); /* Side bar border */
+    --palette-black-alpha-20: rgba(var(--palette-neutral-100), 0.29);
+    --palette-black-alpha-30: rgba(var(--palette-neutral-100), 0.40);
+    --palette-black-alpha-60: rgba(var(--palette-neutral-100), 0.57);
+    --palette-black-alpha-70: rgba(var(--palette-neutral-100), 0.7);
+    --palette-black-alpha-80: rgba(var(--palette-neutral-100), 0.86);
+    --palette-black-alpha-100: rgba(var(--palette-neutral-100), 1);
+    --palette-accent1-light: 68, 39, 38;
+    --palette-accent1: 241, 112, 123;
+    --palette-accent1-dark: 241, 112, 123;
+    --palette-accent2-light: 57, 61, 27;
+    --palette-accent2: 146, 195, 83;
+    --palette-accent2-dark: 146, 195, 83;
+    --palette-accent3-light: 67, 53, 25;
+    --palette-accent3: #rgb(@accent)[]; /* Star */
+    --palette-accent3-dark: 253, 185, 19;
+    --background-color: rgba(var(--palette-neutral-0), 1);
+    --communication-foreground: @blue; /* Link */
+    --communication-background: @surface0; /* Dropdown BG, underline for current menu */
+    --status-info-foreground: rgba(97, 168, 255, 1);
+    --status-info-background: rgba(0, 120, 212, 1);
+    --status-error-foreground: rgba(var(--palette-accent1), 1);
+    --status-error-background: rgba(var(--palette-accent1-light), 1);
+    --status-error-text: rgba(var(--palette-accent1), 1);
+    --status-error-strong: rgba(var(--palette-accent1-dark), 1);
+    --status-success-foreground: rgba(var(--palette-accent2-dark), 1);
+    --status-success-background: rgba(var(--palette-accent2-light), 1);
+    --status-success-text: rgba(127, 184, 0, 1);
+    --status-warning-icon-foreground: rgba(177, 133, 37, 1);
+    --status-warning-foreground: rgba(var(--palette-accent3), 1);
+    --status-warning-background: rgba(var(--palette-accent3-light), 1);
+    --status-warning-text: rgba(var(--palette-accent3), 1);
+
+    --text-primary-color: @text;
+    --text-secondary-color: @subtext1;
+    --text-disabled-color: @overlay1;
+    --text-on-communication-background: @text;
+
+    --border-subtle-color: rgba(var(--palette-neutral-100), .08);
+    --splitter-border-color: rgba(var(--palette-neutral-100), .42);
+    --callout-background-color: rgba(var(--palette-neutral-6), 1);
+    --callout-filtered-background-color: rgba(var(--palette-neutral-0), 0.80);
+    --callout-shadow-color: rgba(0, 0, 0, .4);
+    --callout-shadow-secondary-color: rgba(0, 0, 0, .32);
+    --panel-shadow-color: rgba(0, 0, 0, .67);
+    --panel-shadow-secondary-color: rgba(0, 0, 0, .53);
+    --focus-pulse-max-color: rgba(var(--palette-primary-shade-10), 0.55);
+    --focus-pulse-min-color: rgba(var(--palette-primary-shade-10), 0.35);
+    --focus-border-color: rgba(var(--palette-primary-shade-10), 1);
+    --third-party-icon-filter: invert(100%);
+    --component-label-default-color: rgba(var(--palette-neutral-10), 1);
+    --component-label-default-color-hover: rgba(var(--palette-neutral-20), 1);
+    --component-grid-row-hover-color: rgba(var(--palette-neutral-100), 0.04);
+    --component-grid-selected-row-color: rgba(var(--palette-primary-tint-40), 1);
+    --component-grid-focus-border-color: rgba(var(--palette-primary), 1);
+    --component-grid-link-selected-row-color: var(--communication-foreground);
+    --component-grid-link-hover-color: var(--communication-foreground);
+    --component-grid-action-hover-color: rgba(var(--palette-neutral-8), 1);
+    --component-grid-action-selected-cell-hover-color: rgba(var(--palette-primary-tint-30), 0.4);
+    --component-grid-cell-bottom-border-color: rgba(var(--palette-neutral-8), 1);
+    --component-grid-drag-source-color: rgba(var(--palette-neutral-0), 0.30);
+    --search-match-background: rgba(92, 45, 145, 1);
+    --search-selected-match-background: rgba(131, 0, 163, 1);
+    --icon-folder-color: #dcb67a;
+    --component-errorBoundary-border-color: rgba(var(--palette-accent1), 1);
+    --component-errorBoundary-background-color: rgba(var(--palette-accent1-light), 1);
+    --nav-header-background: var(--background-color);
+    --nav-header-item-hover-background: rgba(var(--palette-neutral-100), 0.02);
+    --nav-header-active-item-background: rgba(var(--palette-neutral-100), 0.08);
+    --nav-header-text-primary-color: var(--text-primary-color);
+    --nav-header-text-secondary-color: var(--text-secondary-color);
+    --nav-header-text-disabled-color: var(--text-disabled-color);
+    --nav-header-product-color: rgba(var(--palette-primary-shade-20), 1);
+    --nav-vertical-background-color: rgba(var(--palette-neutral-8), 1);
+    --nav-vertical-item-hover-background: rgba(var(--palette-neutral-100), 0.04);
+    --nav-vertical-active-group-background: rgba(var(--palette-neutral-100), 0.06);
+    --nav-vertical-active-item-background: rgba(var(--palette-neutral-100), 0.12);
+    --nav-vertical-text-primary-color: var(--text-primary-color);
+    --nav-vertical-text-secondary-color: var(--text-secondary-color);
+    --component-menu-selected-item-background: rgba(var(--palette-neutral-100), 0.04);
+    --component-htmlEditor-background-color: rgba(255, 255, 255, 1);
+    --component-htmlEditor-foreground-color: rgba(0, 0, 0, .9);
+  }
+}
+
+#rgb(@hex) {
+  @result: red(@hex), green(@hex), blue(@hex);
+}
+
+/* deno-fmt-ignore */
+@catppuccin: {
+  @latte:     { @rosewater: #dc8a78; @flamingo: #dd7878; @pink: #ea76cb; @mauve: #8839ef; @red: #d20f39; @maroon: #e64553; @peach: #fe640b; @yellow: #df8e1d; @green: #40a02b; @teal: #179299; @sky: #04a5e5; @sapphire: #209fb5; @blue: #1e66f5; @lavender: #7287fd; @text: #4c4f69; @subtext1: #5c5f77; @subtext0: #6c6f85; @overlay2: #7c7f93; @overlay1: #8c8fa1; @overlay0: #9ca0b0; @surface2: #acb0be; @surface1: #bcc0cc; @surface0: #ccd0da; @base: #eff1f5; @mantle: #e6e9ef; @crust: #dce0e8; };
+  @frappe:    { @rosewater: #f2d5cf; @flamingo: #eebebe; @pink: #f4b8e4; @mauve: #ca9ee6; @red: #e78284; @maroon: #ea999c; @peach: #ef9f76; @yellow: #e5c890; @green: #a6d189; @teal: #81c8be; @sky: #99d1db; @sapphire: #85c1dc; @blue: #8caaee; @lavender: #babbf1; @text: #c6d0f5; @subtext1: #b5bfe2; @subtext0: #a5adce; @overlay2: #949cbb; @overlay1: #838ba7; @overlay0: #737994; @surface2: #626880; @surface1: #51576d; @surface0: #414559; @base: #303446; @mantle: #292c3c; @crust: #232634; };
+  @macchiato: { @rosewater: #f4dbd6; @flamingo: #f0c6c6; @pink: #f5bde6; @mauve: #c6a0f6; @red: #ed8796; @maroon: #ee99a0; @peach: #f5a97f; @yellow: #eed49f; @green: #a6da95; @teal: #8bd5ca; @sky: #91d7e3; @sapphire: #7dc4e4; @blue: #8aadf4; @lavender: #b7bdf8; @text: #cad3f5; @subtext1: #b8c0e0; @subtext0: #a5adcb; @overlay2: #939ab7; @overlay1: #8087a2; @overlay0: #6e738d; @surface2: #5b6078; @surface1: #494d64; @surface0: #363a4f; @base: #24273a; @mantle: #1e2030; @crust: #181926; };
+  @mocha:     { @rosewater: #f5e0dc; @flamingo: #f2cdcd; @pink: #f5c2e7; @mauve: #cba6f7; @red: #f38ba8; @maroon: #eba0ac; @peach: #fab387; @yellow: #f9e2af; @green: #a6e3a1; @teal: #94e2d5; @sky: #89dceb; @sapphire: #74c7ec; @blue: #89b4fa; @lavender: #b4befe; @text: #cdd6f4; @subtext1: #bac2de; @subtext0: #a6adc8; @overlay2: #9399b2; @overlay1: #7f849c; @overlay0: #6c7086; @surface2: #585b70; @surface1: #45475a; @surface0: #313244; @base: #1e1e2e; @mantle: #181825; @crust: #11111b; };
+};

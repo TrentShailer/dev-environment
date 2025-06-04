@@ -73,12 +73,12 @@
     --palette-primary-darkened-6: 0, 103, 181;
     --palette-primary-darkened-10: 0, 120, 212;
     --palette-primary-shade-30: 184, 216, 255;
-    --palette-primary-shade-20: 152, 198, 255; /* URL colour + Azure icon */
+    --palette-primary-shade-20: #rgb(@accent); /* URL colour + Azure icon */
     --palette-primary-shade-10: 121, 181, 255;
     --palette-primary: 0, 129, 227;
     --palette-primary-tint-10: 82, 143, 217;
     --palette-primary-tint-20: 73, 126, 191;
-    --palette-primary-tint-30: 55, 96, 145; /* Pill BG  */
+    --palette-primary-tint-30: #rgb(@surface0); /* Pill BG  */
     --palette-primary-tint-40: 34, 59, 89;
 
     --palette-neutral-100: #rgb(@text)[]; /* Text */ 
@@ -100,7 +100,7 @@
     --palette-black-alpha-0: rgba(var(--palette-neutral-100), 0);
     --palette-black-alpha-2: rgba(var(--palette-neutral-100), 0.02);
     --palette-black-alpha-4: rgba(var(--palette-neutral-100), 0.04);
-    --palette-black-alpha-6: rgba(var(--palette-neutral-100), 0.08); /* Dropdown BG */
+    --palette-black-alpha-6: @overlay1; /* Dropdown BG */
     --palette-black-alpha-8: rgba(var(--palette-neutral-100), 0.12);
     --palette-black-alpha-10: rgba(var(--palette-neutral-100), 0.18); /* Side bar border */
     --palette-black-alpha-20: rgba(var(--palette-neutral-100), 0.29);
@@ -116,11 +116,11 @@
     --palette-accent2: 146, 195, 83;
     --palette-accent2-dark: 146, 195, 83;
     --palette-accent3-light: 67, 53, 25;
-    --palette-accent3: 253, 185, 19;
+    --palette-accent3: #rgb(@accent)[]; /* Star */
     --palette-accent3-dark: 253, 185, 19;
     --background-color: rgba(var(--palette-neutral-0), 1);
-    --communication-foreground: rgba(var(--palette-primary-shade-20), 1);/* Link */
-    --communication-background: rgba(0, 120, 212, 1);
+    --communication-foreground: @blue; /* Link */
+    --communication-background: @surface0; /* Dropdown BG, underline for current menu */
     --status-info-foreground: rgba(97, 168, 255, 1);
     --status-info-background: rgba(0, 120, 212, 1);
     --status-error-foreground: rgba(var(--palette-accent1), 1);
@@ -134,10 +134,12 @@
     --status-warning-foreground: rgba(var(--palette-accent3), 1);
     --status-warning-background: rgba(var(--palette-accent3-light), 1);
     --status-warning-text: rgba(var(--palette-accent3), 1);
-    --text-primary-color: rgba(var(--palette-neutral-100), .95);
-    --text-secondary-color: rgba(var(--palette-neutral-100), .80);
-    --text-disabled-color: rgba(var(--palette-neutral-100), .5);
-    --text-on-communication-background: rgba(var(--palette-neutral-100), 1);
+
+    --text-primary-color: @text;
+    --text-secondary-color: @subtext1;
+    --text-disabled-color: @overlay1;
+    --text-on-communication-background: @text;
+
     --border-subtle-color: rgba(var(--palette-neutral-100), .08);
     --splitter-border-color: rgba(var(--palette-neutral-100), .42);
     --callout-background-color: rgba(var(--palette-neutral-6), 1);

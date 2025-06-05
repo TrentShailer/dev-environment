@@ -15,6 +15,8 @@
 ==/UserStyle== */
 
 @-moz-document domain("atlassian.net") {
+  @import url("https://prismjs.catppuccin.com/variables.css");
+
   html[data-color-mode="dark"][data-theme~="dark:dark"] {
     #catppuccin(@darkFlavor);
   }
@@ -97,7 +99,7 @@
       --ds-link-visited: #regular(@lavender)[];
       --ds-link-visited-pressed: #regular(@sky)[];
 
-      --ds-icon: #regular(@accent)[]; /* TODO these are middle row */
+      --ds-icon: #regular(@accent)[];
       --ds-icon-accent-lime: #regular(@green)[];
       --ds-icon-accent-red: #regular(@red)[];
       --ds-icon-accent-orange: #regular(@peach)[];

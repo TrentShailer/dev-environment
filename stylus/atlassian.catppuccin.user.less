@@ -1,0 +1,484 @@
+/* ==UserStyle==
+@name Atlassian Catppuccin
+@namespace github.com/trentshailer/dev-environment/stylus
+@homepageURL https://github.com/trentshailer/dev-environment/tree/main/stylus/atlassian.catppuccin.user.less
+@version 2025.06.05
+@updateURL https://github.com/trentshailer/dev-environment/raw/main/stylus/atlassian.catppuccin.user.less
+@description Soothing pastel theme for Atlassian
+@author Catppuccin
+@license MIT
+
+@preprocessor less
+@var select lightFlavor "Light Flavor" ["latte:Latte*", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha"]
+@var select darkFlavor "Dark Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve*", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
+==/UserStyle== */
+
+@-moz-document domain("atlassian.net") {
+
+    html[data-color-mode="dark"][data-theme~="dark:dark"] {
+        #catppuccin(@darkFlavor);
+    }
+
+    html[data-color-mode="light"][data-theme~="light:light"] {
+        #catppuccin(@lightFlavor);
+    }
+
+    #catppuccin(@flavor) {
+        @rosewater: @catppuccin[@@flavor][@rosewater];
+        @flamingo: @catppuccin[@@flavor][@flamingo];
+        @pink: @catppuccin[@@flavor][@pink];
+        @mauve: @catppuccin[@@flavor][@mauve];
+        @red: @catppuccin[@@flavor][@red];
+        @maroon: @catppuccin[@@flavor][@maroon];
+        @peach: @catppuccin[@@flavor][@peach];
+        @yellow: @catppuccin[@@flavor][@yellow];
+        @green: @catppuccin[@@flavor][@green];
+        @teal: @catppuccin[@@flavor][@teal];
+        @sky: @catppuccin[@@flavor][@sky];
+        @sapphire: @catppuccin[@@flavor][@sapphire];
+        @blue: @catppuccin[@@flavor][@blue];
+        @lavender: @catppuccin[@@flavor][@lavender];
+        @text: @catppuccin[@@flavor][@text];
+        @subtext1: @catppuccin[@@flavor][@subtext1];
+        @subtext0: @catppuccin[@@flavor][@subtext0];
+        @overlay2: @catppuccin[@@flavor][@overlay2];
+        @overlay1: @catppuccin[@@flavor][@overlay1];
+        @overlay0: @catppuccin[@@flavor][@overlay0];
+        @surface2: @catppuccin[@@flavor][@surface2];
+        @surface1: @catppuccin[@@flavor][@surface1];
+        @surface0: @catppuccin[@@flavor][@surface0];
+        @base: @catppuccin[@@flavor][@base];
+        @mantle: @catppuccin[@@flavor][@mantle];
+        @crust: @catppuccin[@@flavor][@crust];
+        @accent: @catppuccin[@@flavor][@@accentColor];
+
+        color-scheme: if(@flavor =latte, light, dark);
+
+        &,
+        * {
+            --ds-text: @text;
+
+            --ds-text-accent-lime: @green;
+            --ds-text-accent-lime-bolder: @green;
+            --ds-text-accent-red: @red;
+            --ds-text-accent-red-bolder: @red;
+            --ds-text-accent-orange: @peach;
+            --ds-text-accent-orange-bolder: @peach;
+            --ds-text-accent-yellow: @yellow;
+            --ds-text-accent-yellow-bolder: @yellow;
+            --ds-text-accent-green: @green;
+            --ds-text-accent-green-bolder: @green;
+            --ds-text-accent-teal: @teal;
+            --ds-text-accent-teal-bolder: @teal;
+            --ds-text-accent-blue: @blue;
+            --ds-text-accent-blue-bolder: @blue;
+            --ds-text-accent-purple: @mauve;
+            --ds-text-accent-purple-bolder: @mauve;
+            --ds-text-accent-magenta: @pink;
+            --ds-text-accent-magenta-bolder: @pink;
+            --ds-text-accent-gray: @subtext0;
+            --ds-text-accent-gray-bolder: @subtext0;
+
+            --ds-text-disabled: @surface0;
+            --ds-text-inverse: @text; /* TODO */
+            --ds-text-selected: @overlay2 opacity 0.3;
+            --ds-text-brand: @blue;
+            --ds-text-danger: @red;
+            --ds-text-warning: @yellow;
+            --ds-text-warning-inverse: @text; /* TODO */
+            --ds-text-success: @green;
+            --ds-text-discovery: @mauve;
+            --ds-text-information: @sky;
+            --ds-text-subtlest: @subtext0;
+            --ds-text-subtle: @subtext1;
+
+            --ds-link: @blue;
+            --ds-link-pressed: @sky;
+            --ds-link-visited: @lavender;
+            --ds-link-visited-pressed: @sky;
+
+            --ds-icon: @accent;
+            --ds-icon-accent-lime: @green;
+            --ds-icon-accent-red: @red;
+            --ds-icon-accent-orange: @peach;
+            --ds-icon-accent-yellow: @yellow;
+            --ds-icon-accent-green: @green;
+            --ds-icon-accent-teal: @teal;
+            --ds-icon-accent-blue: @blue;
+            --ds-icon-accent-purple: @mauve;
+            --ds-icon-accent-magenta: @pink;
+            --ds-icon-accent-gray: @surface1;
+            --ds-icon-disabled: @overlay1;
+            --ds-icon-inverse: #1F1F21;
+            --ds-icon-selected: #669DF1;
+            --ds-icon-brand: @blue;
+            --ds-icon-danger: @red;
+            --ds-icon-warning: @yellow;
+            --ds-icon-warning-inverse: #1F1F21;
+            --ds-icon-success: @green;
+            --ds-icon-discovery: @mauve;
+            --ds-icon-information: @blue;
+            --ds-icon-subtlest: #96999E;
+            --ds-icon-subtle: #A9ABAF;
+
+            --ds-border: @surface0;
+            --ds-border-accent-lime: @green;
+            --ds-border-accent-red: @red;
+            --ds-border-accent-orange: @peach;
+            --ds-border-accent-yellow: @yellow;
+            --ds-border-accent-green: @green;
+            --ds-border-accent-teal: @teal;
+            --ds-border-accent-blue: @blue;
+            --ds-border-accent-purple: @mauve;
+            --ds-border-accent-magenta: @pink;
+            --ds-border-accent-gray: @surface1;
+            --ds-border-disabled: #CECED912;
+            --ds-border-focused: #8FB8F6;
+            --ds-border-input: #7E8188;
+            --ds-border-inverse: #18191A;
+            --ds-border-selected: #669DF1;
+            --ds-border-brand: #669DF1;
+            --ds-border-danger: @red;
+            --ds-border-warning: @yellow;
+            --ds-border-success: @green;
+            --ds-border-discovery: @mauve;
+            --ds-border-information: @blue;
+            --ds-border-bold: #7E8188;
+
+            --ds-background-accent-lime-subtlest: #28311B;
+            --ds-background-accent-lime-subtlest-hovered: #37471F;
+            --ds-background-accent-lime-subtlest-pressed: #4C6B1F;
+            --ds-background-accent-lime-subtler: #37471F;
+            --ds-background-accent-lime-subtler-hovered: #4C6B1F;
+            --ds-background-accent-lime-subtler-pressed: #5B7F24;
+            --ds-background-accent-lime-subtle: #4C6B1F;
+            --ds-background-accent-lime-subtle-hovered: #37471F;
+            --ds-background-accent-lime-subtle-pressed: #28311B;
+            --ds-background-accent-lime-bolder: #94C748;
+            --ds-background-accent-lime-bolder-hovered: #B3DF72;
+            --ds-background-accent-lime-bolder-pressed: #D3F1A7;
+
+            --ds-background-accent-red-subtlest: #42221F;
+            --ds-background-accent-red-subtlest-hovered: #5D1F1A;
+            --ds-background-accent-red-subtlest-pressed: #AE2E24;
+            --ds-background-accent-red-subtler: #5D1F1A;
+            --ds-background-accent-red-subtler-hovered: #AE2E24;
+            --ds-background-accent-red-subtler-pressed: #C9372C;
+            --ds-background-accent-red-subtle: #AE2E24;
+            --ds-background-accent-red-subtle-hovered: #5D1F1A;
+            --ds-background-accent-red-subtle-pressed: #42221F;
+            --ds-background-accent-red-bolder: #F87168;
+            --ds-background-accent-red-bolder-hovered: #FD9891;
+            --ds-background-accent-red-bolder-pressed: #FFD5D2;
+
+            --ds-background-accent-orange-subtlest: #3A2C1F;
+            --ds-background-accent-orange-subtlest-hovered: #693200;
+            --ds-background-accent-orange-subtlest-pressed: #9E4C00;
+            --ds-background-accent-orange-subtler: #693200;
+            --ds-background-accent-orange-subtler-hovered: #9E4C00;
+            --ds-background-accent-orange-subtler-pressed: #BD5B00;
+            --ds-background-accent-orange-subtle: #9E4C00;
+            --ds-background-accent-orange-subtle-hovered: #693200;
+            --ds-background-accent-orange-subtle-pressed: #3A2C1F;
+            --ds-background-accent-orange-bolder: #FCA700;
+            --ds-background-accent-orange-bolder-hovered: #FBC828;
+            --ds-background-accent-orange-bolder-pressed: #FCE4A6;
+
+            --ds-background-accent-yellow-subtlest: #332E1B;
+            --ds-background-accent-yellow-subtlest-hovered: #533F04;
+            --ds-background-accent-yellow-subtlest-pressed: #7F5F01;
+            --ds-background-accent-yellow-subtler: #533F04;
+            --ds-background-accent-yellow-subtler-hovered: #7F5F01;
+            --ds-background-accent-yellow-subtler-pressed: #946F00;
+            --ds-background-accent-yellow-subtle: #7F5F01;
+            --ds-background-accent-yellow-subtle-hovered: #533F04;
+            --ds-background-accent-yellow-subtle-pressed: #332E1B;
+            --ds-background-accent-yellow-bolder: #DDB30E;
+            --ds-background-accent-yellow-bolder-hovered: #EED12B;
+            --ds-background-accent-yellow-bolder-pressed: #F5E989;
+
+            --ds-background-accent-green-subtlest: #1C3329;
+            --ds-background-accent-green-subtlest-hovered: #164B35;
+            --ds-background-accent-green-subtlest-pressed: #216E4E;
+            --ds-background-accent-green-subtler: #164B35;
+            --ds-background-accent-green-subtler-hovered: #216E4E;
+            --ds-background-accent-green-subtler-pressed: #1F845A;
+            --ds-background-accent-green-subtle: #216E4E;
+            --ds-background-accent-green-subtle-hovered: #164B35;
+            --ds-background-accent-green-subtle-pressed: #1C3329;
+            --ds-background-accent-green-bolder: #4BCE97;
+            --ds-background-accent-green-bolder-hovered: #7EE2B8;
+            --ds-background-accent-green-bolder-pressed: #BAF3DB;
+
+            --ds-background-accent-teal-subtlest: #1E3137;
+            --ds-background-accent-teal-subtlest-hovered: #164555;
+            --ds-background-accent-teal-subtlest-pressed: #206A83;
+            --ds-background-accent-teal-subtler: #164555;
+            --ds-background-accent-teal-subtler-hovered: #206A83;
+            --ds-background-accent-teal-subtler-pressed: #227D9B;
+            --ds-background-accent-teal-subtle: #206A83;
+            --ds-background-accent-teal-subtle-hovered: #164555;
+            --ds-background-accent-teal-subtle-pressed: #1E3137;
+            --ds-background-accent-teal-bolder: #6CC3E0;
+            --ds-background-accent-teal-bolder-hovered: #9DD9EE;
+            --ds-background-accent-teal-bolder-pressed: #C6EDFB;
+
+            --ds-background-accent-blue-subtlest: #1C2B42;
+            --ds-background-accent-blue-subtlest-hovered: #123263;
+            --ds-background-accent-blue-subtlest-pressed: #1558BC;
+            --ds-background-accent-blue-subtler: #123263;
+            --ds-background-accent-blue-subtler-hovered: #1558BC;
+            --ds-background-accent-blue-subtler-pressed: #1868DB;
+            --ds-background-accent-blue-subtle: #1558BC;
+            --ds-background-accent-blue-subtle-hovered: #123263;
+            --ds-background-accent-blue-subtle-pressed: #1C2B42;
+            --ds-background-accent-blue-bolder: #669DF1;
+            --ds-background-accent-blue-bolder-hovered: #8FB8F6;
+            --ds-background-accent-blue-bolder-pressed: #CFE1FD;
+
+            --ds-background-accent-purple-subtlest: darken(@mauve, 90%);
+            --ds-background-accent-purple-subtlest-hovered:  darken(@mauve, 80%);
+            --ds-background-accent-purple-subtlest-pressed:  darken(@mauve, 70%);
+            --ds-background-accent-purple-subtler: darken(@mauve, 60%);
+            --ds-background-accent-purple-subtler-hovered:  darken(@mauve, 50%);
+            --ds-background-accent-purple-subtler-pressed:  darken(@mauve, 40%);
+            --ds-background-accent-purple-subtle: darken(@mauve, 30%);
+            --ds-background-accent-purple-subtle-hovered:  darken(@mauve, 20%);
+            --ds-background-accent-purple-subtle-pressed:  darken(@mauve, 10%);
+            --ds-background-accent-purple-bolder: @mauve;
+            --ds-background-accent-purple-bolder-hovered:  lighten(@mauve, 10%);
+            --ds-background-accent-purple-bolder-pressed:  lighten(@mauve, 20%);
+
+            --ds-background-accent-magenta-subtlest: darken(@pink, 90%);
+            --ds-background-accent-magenta-subtlest-hovered: darken(@pink, 80%);
+            --ds-background-accent-magenta-subtlest-pressed: darken(@pink, 70%);
+            --ds-background-accent-magenta-subtler: darken(@pink, 60%);
+            --ds-background-accent-magenta-subtler-hovered: darken(@pink, 50%);
+            --ds-background-accent-magenta-subtler-pressed: darken(@pink, 40%);
+            --ds-background-accent-magenta-subtle: darken(@pink, 30%);
+            --ds-background-accent-magenta-subtle-hovered: darken(@pink, 20%);
+            --ds-background-accent-magenta-subtle-pressed: darken(@pink, 10%);
+            --ds-background-accent-magenta-bolder: @pink;
+            --ds-background-accent-magenta-bolder-hovered: lighten(@pink, 10%);
+            --ds-background-accent-magenta-bolder-pressed: lighten(@pink, 20%);
+
+            --ds-background-accent-gray-subtlest: @mantle;
+            --ds-background-accent-gray-subtlest-hovered: lighten(@mantle, 10%);
+            --ds-background-accent-gray-subtlest-pressed: lighten(@mantle, 20%);
+            --ds-background-accent-gray-subtler: @surface0;
+            --ds-background-accent-gray-subtler-hovered: lighten(@surface0, 10%);
+            --ds-background-accent-gray-subtler-pressed: lighten(@surface0, 20%);
+            --ds-background-accent-gray-subtle: @surface1;
+            --ds-background-accent-gray-subtle-hovered: lighten(@surface1, 10%);
+            --ds-background-accent-gray-subtle-pressed: lighten(@surface1, 20%);
+            --ds-background-accent-gray-bolder: @surface2;
+            --ds-background-accent-gray-bolder-hovered: lighten(@surface2, 10%);
+            --ds-background-accent-gray-bolder-pressed: lighten(@surface2, 20%);
+            
+            --ds-background-disabled: #BDBDBD0A;
+            --ds-background-input: @mantle;
+            --ds-background-input-hovered: #2B2C2F;
+            --ds-background-input-pressed: #242528;
+            --ds-background-inverse-subtle: #FFFFFF29;
+            --ds-background-inverse-subtle-hovered: #FFFFFF3D;
+            --ds-background-inverse-subtle-pressed: #FFFFFF52;
+            --ds-background-neutral: #CECED912;
+            --ds-background-neutral-hovered: #E3E4F21F;
+            --ds-background-neutral-pressed: #E5E9F640;
+            --ds-background-neutral-subtle: #00000000;
+            --ds-background-neutral-subtle-hovered: #CECED912;
+            --ds-background-neutral-subtle-pressed: #E3E4F21F;
+            --ds-background-neutral-bold: #CECFD2;
+            --ds-background-neutral-bold-hovered: #BFC1C4;
+            --ds-background-neutral-bold-pressed: #A9ABAF;
+            --ds-background-selected: #1C2B42;
+            --ds-background-selected-hovered: #123263;
+            --ds-background-selected-pressed: #1558BC;
+            --ds-background-selected-bold: #669DF1;
+            --ds-background-selected-bold-hovered: #8FB8F6;
+            --ds-background-selected-bold-pressed: #CFE1FD;
+            --ds-background-brand-subtlest: #1C2B42;
+            --ds-background-brand-subtlest-hovered: #123263;
+            --ds-background-brand-subtlest-pressed: #1558BC;
+            --ds-background-brand-bold: #669DF1;
+            --ds-background-brand-bold-hovered: #8FB8F6;
+            --ds-background-brand-bold-pressed: #CFE1FD;
+            --ds-background-brand-boldest: #E9F2FE;
+            --ds-background-brand-boldest-hovered: #CFE1FD;
+            --ds-background-brand-boldest-pressed: #8FB8F6;
+            --ds-background-danger: #42221F;
+            --ds-background-danger-hovered: #5D1F1A;
+            --ds-background-danger-pressed: #AE2E24;
+            --ds-background-danger-bold: #F87168;
+            --ds-background-danger-bold-hovered: #FD9891;
+            --ds-background-danger-bold-pressed: #FFD5D2;
+            --ds-background-warning: #3A2C1F;
+            --ds-background-warning-hovered: #693200;
+            --ds-background-warning-pressed: #9E4C00;
+            --ds-background-warning-bold: #FBC828;
+            --ds-background-warning-bold-hovered: #FCA700;
+            --ds-background-warning-bold-pressed: #F68909;
+            --ds-background-success: #28311B;
+            --ds-background-success-hovered: #37471F;
+            --ds-background-success-pressed: #4C6B1F;
+            --ds-background-success-bold: #94C748;
+            --ds-background-success-bold-hovered: #B3DF72;
+            --ds-background-success-bold-pressed: #D3F1A7;
+            --ds-background-discovery: #35243F;
+            --ds-background-discovery-hovered: #48245D;
+            --ds-background-discovery-pressed: #803FA5;
+            --ds-background-discovery-bold: #C97CF4;
+            --ds-background-discovery-bold-hovered: #D8A0F7;
+            --ds-background-discovery-bold-pressed: #EED7FC;
+            --ds-background-information: #1C2B42;
+            --ds-background-information-hovered: #123263;
+            --ds-background-information-pressed: #1558BC;
+            --ds-background-information-bold: #669DF1;
+            --ds-background-information-bold-hovered: #8FB8F6;
+            --ds-background-information-bold-pressed: #CFE1FD;
+
+            --ds-blanket: #10121499;
+            --ds-blanket-selected: #1D7AFC14;
+            --ds-blanket-danger: #E3493514;
+
+            --ds-interaction-hovered: #ffffff33;
+            --ds-interaction-pressed: #ffffff5c;
+
+            --ds-skeleton: #CECED912;
+            --ds-skeleton-subtle: #BDBDBD0A;
+
+            --ds-chart-categorical-1: #4688EC;
+            --ds-chart-categorical-1-hovered: #669DF1;
+            --ds-chart-categorical-2: #94C748;
+            --ds-chart-categorical-2-hovered: #B3DF72;
+            --ds-chart-categorical-3: #C97CF4;
+            --ds-chart-categorical-3-hovered: #D8A0F7;
+            --ds-chart-categorical-4: #FCA700;
+            --ds-chart-categorical-4-hovered: #FBC828;
+            --ds-chart-categorical-5: #1558BC;
+            --ds-chart-categorical-5-hovered: #1868DB;
+            --ds-chart-categorical-6: #964AC0;
+            --ds-chart-categorical-6-hovered: #AF59E1;
+            --ds-chart-categorical-7: #42B2D7;
+            --ds-chart-categorical-7-hovered: #6CC3E0;
+            --ds-chart-categorical-8: #E06C00;
+            --ds-chart-categorical-8-hovered: #F68909;
+            --ds-chart-lime-bold: #82B536;
+            --ds-chart-lime-bold-hovered: #94C748;
+            --ds-chart-lime-bolder: #94C748;
+            --ds-chart-lime-bolder-hovered: #B3DF72;
+            --ds-chart-lime-boldest: #B3DF72;
+            --ds-chart-lime-boldest-hovered: #D3F1A7;
+            --ds-chart-neutral: #7E8188;
+            --ds-chart-neutral-hovered: #96999E;
+            --ds-chart-red-bold: #E2483D;
+            --ds-chart-red-bold-hovered: #F15B50;
+            --ds-chart-red-bolder: #F15B50;
+            --ds-chart-red-bolder-hovered: #F87168;
+            --ds-chart-red-boldest: #FD9891;
+            --ds-chart-red-boldest-hovered: #FFD5D2;
+            --ds-chart-orange-bold: #F68909;
+            --ds-chart-orange-bold-hovered: #FCA700;
+            --ds-chart-orange-bolder: #FCA700;
+            --ds-chart-orange-bolder-hovered: #FBC828;
+            --ds-chart-orange-boldest: #FBC828;
+            --ds-chart-orange-boldest-hovered: #FCE4A6;
+            --ds-chart-yellow-bold: #CF9F02;
+            --ds-chart-yellow-bold-hovered: #DDB30E;
+            --ds-chart-yellow-bolder: #DDB30E;
+            --ds-chart-yellow-bolder-hovered: #EED12B;
+            --ds-chart-yellow-boldest: #EED12B;
+            --ds-chart-yellow-boldest-hovered: #F5E989;
+            --ds-chart-green-bold: #2ABB7F;
+            --ds-chart-green-bold-hovered: #4BCE97;
+            --ds-chart-green-bolder: #4BCE97;
+            --ds-chart-green-bolder-hovered: #7EE2B8;
+            --ds-chart-green-boldest: #7EE2B8;
+            --ds-chart-green-boldest-hovered: #BAF3DB;
+            --ds-chart-teal-bold: #42B2D7;
+            --ds-chart-teal-bold-hovered: #6CC3E0;
+            --ds-chart-teal-bolder: #6CC3E0;
+            --ds-chart-teal-bolder-hovered: #9DD9EE;
+            --ds-chart-teal-boldest: #9DD9EE;
+            --ds-chart-teal-boldest-hovered: #C6EDFB;
+            --ds-chart-blue-bold: #357DE8;
+            --ds-chart-blue-bold-hovered: #4688EC;
+            --ds-chart-blue-bolder: #4688EC;
+            --ds-chart-blue-bolder-hovered: #669DF1;
+            --ds-chart-blue-boldest: #8FB8F6;
+            --ds-chart-blue-boldest-hovered: #CFE1FD;
+            --ds-chart-purple-bold: #AF59E1;
+            --ds-chart-purple-bold-hovered: #BF63F3;
+            --ds-chart-purple-bolder: #BF63F3;
+            --ds-chart-purple-bolder-hovered: #C97CF4;
+            --ds-chart-purple-boldest: #D8A0F7;
+            --ds-chart-purple-boldest-hovered: #EED7FC;
+            --ds-chart-magenta-bold: #CD519D;
+            --ds-chart-magenta-bold-hovered: #DA62AC;
+            --ds-chart-magenta-bolder: #DA62AC;
+            --ds-chart-magenta-bolder-hovered: #E774BB;
+            --ds-chart-magenta-boldest: #F797D2;
+            --ds-chart-magenta-boldest-hovered: #FDD0EC;
+            --ds-chart-gray-bold: #7E8188;
+            --ds-chart-gray-bold-hovered: #96999E;
+            --ds-chart-gray-bolder: #96999E;
+            --ds-chart-gray-bolder-hovered: #A9ABAF;
+            --ds-chart-gray-boldest: #A9ABAF;
+            --ds-chart-gray-boldest-hovered: #BFC1C4;
+            --ds-chart-brand: #4688EC;
+            --ds-chart-brand-hovered: #669DF1;
+            --ds-chart-danger: #E2483D;
+            --ds-chart-danger-hovered: #F15B50;
+            --ds-chart-danger-bold: #F87168;
+            --ds-chart-danger-bold-hovered: #FD9891;
+            --ds-chart-warning: #F68909;
+            --ds-chart-warning-hovered: #FCA700;
+            --ds-chart-warning-bold: #FBC828;
+            --ds-chart-warning-bold-hovered: #FCE4A6;
+            --ds-chart-success: #82B536;
+            --ds-chart-success-hovered: #94C748;
+            --ds-chart-success-bold: #B3DF72;
+            --ds-chart-success-bold-hovered: #D3F1A7;
+            --ds-chart-discovery: #BF63F3;
+            --ds-chart-discovery-hovered: #C97CF4;
+            --ds-chart-discovery-bold: #D8A0F7;
+            --ds-chart-discovery-bold-hovered: #EED7FC;
+            --ds-chart-information: #4688EC;
+            --ds-chart-information-hovered: #669DF1;
+            --ds-chart-information-bold: #8FB8F6;
+            --ds-chart-information-bold-hovered: #CFE1FD;
+
+            --ds-surface: @base;
+            --ds-surface-hovered: @mantle;
+            --ds-surface-pressed: @crust;
+            --ds-surface-overlay: @mantle;
+            --ds-surface-overlay-hovered: @base;
+            --ds-surface-overlay-pressed: @mantle;
+            --ds-surface-raised: @mantle;
+            --ds-surface-raised-hovered: @base;
+            --ds-surface-raised-pressed: @mantle;
+            --ds-surface-sunken: @mantle;
+
+            --ds-shadow-overflow: 0px 0px 12px fade(@crust, 50%), 0px 0px 1px fade(@crust, 50%);
+            --ds-shadow-overflow-perimeter: #01040480;
+            --ds-shadow-overflow-spread: #0104048f;
+            --ds-shadow-overlay: 0px 0px 0px 1px fade(@crust, 80%), 0px 8px 12px fade(@crust, 50%), 0px 0px 1px 1px fade(@crust, 80%);
+            --ds-shadow-raised: 0px 0px 0px 1px fade(@crust, 0%), 0px 1px 1px fade(@crust, 50%), 0px 0px 1px fade(@crust, 50%);
+
+            --ds-opacity-disabled: 0.4;
+            --ds-opacity-loading: 0.2;
+
+            --ds-UNSAFE-transparent: transparent;
+            --ds-elevation-surface-current: #1F1F21;
+        }
+    }
+}
+
+/* deno-fmt-ignore */
+@catppuccin: {
+  @latte:     { @rosewater: #dc8a78; @flamingo: #dd7878; @pink: #ea76cb; @mauve: #8839ef; @red: #d20f39; @maroon: #e64553; @peach: #fe640b; @yellow: #df8e1d; @green: #40a02b; @teal: #179299; @sky: #04a5e5; @sapphire: #209fb5; @blue: #1e66f5; @lavender: #7287fd; @text: #4c4f69; @subtext1: #5c5f77; @subtext0: #6c6f85; @overlay2: #7c7f93; @overlay1: #8c8fa1; @overlay0: #9ca0b0; @surface2: #acb0be; @surface1: #bcc0cc; @surface0: #ccd0da; @base: #eff1f5; @mantle: #e6e9ef; @crust: #dce0e8; };
+  @frappe:    { @rosewater: #f2d5cf; @flamingo: #eebebe; @pink: #f4b8e4; @mauve: #ca9ee6; @red: #e78284; @maroon: #ea999c; @peach: #ef9f76; @yellow: #e5c890; @green: #a6d189; @teal: #81c8be; @sky: #99d1db; @sapphire: #85c1dc; @blue: #8caaee; @lavender: #babbf1; @text: #c6d0f5; @subtext1: #b5bfe2; @subtext0: #a5adce; @overlay2: #949cbb; @overlay1: #838ba7; @overlay0: #737994; @surface2: #626880; @surface1: #51576d; @surface0: #414559; @base: #303446; @mantle: #292c3c; @crust: #232634; };
+  @macchiato: { @rosewater: #f4dbd6; @flamingo: #f0c6c6; @pink: #f5bde6; @mauve: #c6a0f6; @red: #ed8796; @maroon: #ee99a0; @peach: #f5a97f; @yellow: #eed49f; @green: #a6da95; @teal: #8bd5ca; @sky: #91d7e3; @sapphire: #7dc4e4; @blue: #8aadf4; @lavender: #b7bdf8; @text: #cad3f5; @subtext1: #b8c0e0; @subtext0: #a5adcb; @overlay2: #939ab7; @overlay1: #8087a2; @overlay0: #6e738d; @surface2: #5b6078; @surface1: #494d64; @surface0: #363a4f; @base: #24273a; @mantle: #1e2030; @crust: #181926; };
+  @mocha:     { @rosewater: #f5e0dc; @flamingo: #f2cdcd; @pink: #f5c2e7; @mauve: #cba6f7; @red: #f38ba8; @maroon: #eba0ac; @peach: #fab387; @yellow: #f9e2af; @green: #a6e3a1; @teal: #94e2d5; @sky: #89dceb; @sapphire: #74c7ec; @blue: #89b4fa; @lavender: #b4befe; @text: #cdd6f4; @subtext1: #bac2de; @subtext0: #a6adc8; @overlay2: #9399b2; @overlay1: #7f849c; @overlay0: #6c7086; @surface2: #585b70; @surface1: #45475a; @surface0: #313244; @base: #1e1e2e; @mantle: #181825; @crust: #11111b; };
+};

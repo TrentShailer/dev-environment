@@ -80,12 +80,12 @@
       --ds-text-accent-gray-bolder: @subtext0;
 
       --ds-text-disabled: @surface0;
-      --ds-text-inverse: @text; /* TODO */
+      --ds-text-inverse: @mantle;
       --ds-text-selected: @overlay2 opacity 0.3;
       --ds-text-brand: @blue;
       --ds-text-danger: @red;
       --ds-text-warning: @yellow;
-      --ds-text-warning-inverse: @text; /* TODO */
+      --ds-text-warning-inverse: @mantle;
       --ds-text-success: @green;
       --ds-text-discovery: @mauve;
       --ds-text-information: @sky;
@@ -515,6 +515,9 @@
 }
 #subtle(@colour) {
   @result: desaturate(darken(@colour, 30%), 24%);
+}
+#regular(@colour) {
+  @result: desaturate(darken(@colour, 0%), 0%);
 }
 #bold(@colour) {
   @result: desaturate(darken(@colour, 20%), 16%);

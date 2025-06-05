@@ -15,464 +15,476 @@
 ==/UserStyle== */
 
 @-moz-document domain("atlassian.net") {
+  html[data-color-mode="dark"][data-theme~="dark:dark"] {
+    #catppuccin(@darkFlavor);
+  }
 
-    html[data-color-mode="dark"][data-theme~="dark:dark"] {
-        #catppuccin(@darkFlavor);
+  html[data-color-mode="light"][data-theme~="light:light"] {
+    #catppuccin(@lightFlavor);
+  }
+
+  #catppuccin(@flavor) {
+    @rosewater: @catppuccin[@@flavor][@rosewater];
+    @flamingo: @catppuccin[@@flavor][@flamingo];
+    @pink: @catppuccin[@@flavor][@pink];
+    @mauve: @catppuccin[@@flavor][@mauve];
+    @red: @catppuccin[@@flavor][@red];
+    @maroon: @catppuccin[@@flavor][@maroon];
+    @peach: @catppuccin[@@flavor][@peach];
+    @yellow: @catppuccin[@@flavor][@yellow];
+    @green: @catppuccin[@@flavor][@green];
+    @teal: @catppuccin[@@flavor][@teal];
+    @sky: @catppuccin[@@flavor][@sky];
+    @sapphire: @catppuccin[@@flavor][@sapphire];
+    @blue: @catppuccin[@@flavor][@blue];
+    @lavender: @catppuccin[@@flavor][@lavender];
+    @text: @catppuccin[@@flavor][@text];
+    @subtext1: @catppuccin[@@flavor][@subtext1];
+    @subtext0: @catppuccin[@@flavor][@subtext0];
+    @overlay2: @catppuccin[@@flavor][@overlay2];
+    @overlay1: @catppuccin[@@flavor][@overlay1];
+    @overlay0: @catppuccin[@@flavor][@overlay0];
+    @surface2: @catppuccin[@@flavor][@surface2];
+    @surface1: @catppuccin[@@flavor][@surface1];
+    @surface0: @catppuccin[@@flavor][@surface0];
+    @base: @catppuccin[@@flavor][@base];
+    @mantle: @catppuccin[@@flavor][@mantle];
+    @crust: @catppuccin[@@flavor][@crust];
+    @accent: @catppuccin[@@flavor][@@accentColor];
+
+    color-scheme: if(@flavor = latte, light, dark);
+
+    &,
+    * {
+      --ds-text: @text;
+
+      --ds-text-accent-lime: @green;
+      --ds-text-accent-lime-bolder: @green;
+      --ds-text-accent-red: @red;
+      --ds-text-accent-red-bolder: @red;
+      --ds-text-accent-orange: @peach;
+      --ds-text-accent-orange-bolder: @peach;
+      --ds-text-accent-yellow: @yellow;
+      --ds-text-accent-yellow-bolder: @yellow;
+      --ds-text-accent-green: @green;
+      --ds-text-accent-green-bolder: @green;
+      --ds-text-accent-teal: @teal;
+      --ds-text-accent-teal-bolder: @teal;
+      --ds-text-accent-blue: @blue;
+      --ds-text-accent-blue-bolder: @blue;
+      --ds-text-accent-purple: @mauve;
+      --ds-text-accent-purple-bolder: @mauve;
+      --ds-text-accent-magenta: @pink;
+      --ds-text-accent-magenta-bolder: @pink;
+      --ds-text-accent-gray: @subtext0;
+      --ds-text-accent-gray-bolder: @subtext0;
+
+      --ds-text-disabled: @surface0;
+      --ds-text-inverse: @text; /* TODO */
+      --ds-text-selected: @overlay2 opacity 0.3;
+      --ds-text-brand: @blue;
+      --ds-text-danger: @red;
+      --ds-text-warning: @yellow;
+      --ds-text-warning-inverse: @text; /* TODO */
+      --ds-text-success: @green;
+      --ds-text-discovery: @mauve;
+      --ds-text-information: @sky;
+      --ds-text-subtlest: @subtext0;
+      --ds-text-subtle: @subtext1;
+
+      --ds-link: @blue;
+      --ds-link-pressed: @sky;
+      --ds-link-visited: @lavender;
+      --ds-link-visited-pressed: @sky;
+
+      --ds-icon: @accent;
+      --ds-icon-accent-lime: @green;
+      --ds-icon-accent-red: @red;
+      --ds-icon-accent-orange: @peach;
+      --ds-icon-accent-yellow: @yellow;
+      --ds-icon-accent-green: @green;
+      --ds-icon-accent-teal: @teal;
+      --ds-icon-accent-blue: @blue;
+      --ds-icon-accent-purple: @mauve;
+      --ds-icon-accent-magenta: @pink;
+      --ds-icon-accent-gray: @surface1;
+      --ds-icon-disabled: @overlay1;
+      --ds-icon-inverse: #1f1f21;
+      --ds-icon-selected: #669df1;
+      --ds-icon-brand: @blue;
+      --ds-icon-danger: @red;
+      --ds-icon-warning: @yellow;
+      --ds-icon-warning-inverse: #1f1f21;
+      --ds-icon-success: @green;
+      --ds-icon-discovery: @mauve;
+      --ds-icon-information: @blue;
+      --ds-icon-subtlest: #96999e;
+      --ds-icon-subtle: #a9abaf;
+
+      --ds-border: @surface0;
+      --ds-border-accent-lime: @green;
+      --ds-border-accent-red: @red;
+      --ds-border-accent-orange: @peach;
+      --ds-border-accent-yellow: @yellow;
+      --ds-border-accent-green: @green;
+      --ds-border-accent-teal: @teal;
+      --ds-border-accent-blue: @blue;
+      --ds-border-accent-purple: @mauve;
+      --ds-border-accent-magenta: @pink;
+      --ds-border-accent-gray: @surface1;
+      --ds-border-disabled: #ceced912;
+      --ds-border-focused: #8fb8f6;
+      --ds-border-input: #7e8188;
+      --ds-border-inverse: #18191a;
+      --ds-border-selected: #669df1;
+      --ds-border-brand: #669df1;
+      --ds-border-danger: @red;
+      --ds-border-warning: @yellow;
+      --ds-border-success: @green;
+      --ds-border-discovery: @mauve;
+      --ds-border-information: @blue;
+      --ds-border-bold: #7e8188;
+
+      --ds-background-accent-lime-subtlest: darken(@green, 65%);
+      --ds-background-accent-lime-subtlest-hovered: darken(@green, 55%);
+      --ds-background-accent-lime-subtlest-pressed: darken(@green, 45%);
+      --ds-background-accent-lime-subtler: darken(@green, 50%);
+      --ds-background-accent-lime-subtler-hovered: darken(@green, 45%);
+      --ds-background-accent-lime-subtler-pressed: darken(@green, 40%);
+      --ds-background-accent-lime-subtle: darken(@green, 35%);
+      --ds-background-accent-lime-subtle-hovered: darken(@green, 30%);
+      --ds-background-accent-lime-subtle-pressed: darken(@green, 25%);
+      --ds-background-accent-lime-bolder: @green;
+      --ds-background-accent-lime-bolder-hovered: lighten(@green, 5%);
+      --ds-background-accent-lime-bolder-pressed: lighten(@green, 10%);
+
+      --ds-background-accent-red-subtlest: darken(@red, 65%);
+      --ds-background-accent-red-subtlest-hovered: darken(@red, 55%);
+      --ds-background-accent-red-subtlest-pressed: darken(@red, 45%);
+      --ds-background-accent-red-subtler: darken(@red, 50%);
+      --ds-background-accent-red-subtler-hovered: darken(@red, 45%);
+      --ds-background-accent-red-subtler-pressed: darken(@red, 40%);
+      --ds-background-accent-red-subtle: darken(@red, 35%);
+      --ds-background-accent-red-subtle-hovered: darken(@red, 30%);
+      --ds-background-accent-red-subtle-pressed: darken(@red, 25%);
+      --ds-background-accent-red-bolder: @red;
+      --ds-background-accent-red-bolder-hovered: lighten(@red, 5%);
+      --ds-background-accent-red-bolder-pressed: lighten(@red, 10%);
+
+      --ds-background-accent-orange-subtlest: darken(@peach, 65%);
+      --ds-background-accent-orange-subtlest-hovered: darken(@peach, 55%);
+      --ds-background-accent-orange-subtlest-pressed: darken(@peach, 45%);
+      --ds-background-accent-orange-subtler: darken(@peach, 50%);
+      --ds-background-accent-orange-subtler-hovered: darken(@peach, 45%);
+      --ds-background-accent-orange-subtler-pressed: darken(@peach, 40%);
+      --ds-background-accent-orange-subtle: darken(@peach, 35%);
+      --ds-background-accent-orange-subtle-hovered: darken(@peach, 30%);
+      --ds-background-accent-orange-subtle-pressed: darken(@peach, 25%);
+      --ds-background-accent-orange-bolder: @peach;
+      --ds-background-accent-orange-bolder-hovered: lighten(@peach, 5%);
+      --ds-background-accent-orange-bolder-pressed: lighten(@peach, 10%);
+
+      --ds-background-accent-yellow-subtlest: darken(@yellow, 65%);
+      --ds-background-accent-yellow-subtlest-hovered: darken(@yellow, 55%);
+      --ds-background-accent-yellow-subtlest-pressed: darken(@yellow, 45%);
+      --ds-background-accent-yellow-subtler: darken(@yellow, 50%);
+      --ds-background-accent-yellow-subtler-hovered: darken(@yellow, 45%);
+      --ds-background-accent-yellow-subtler-pressed: darken(@yellow, 40%);
+      --ds-background-accent-yellow-subtle: darken(@yellow, 35%);
+      --ds-background-accent-yellow-subtle-hovered: darken(@yellow, 30%);
+      --ds-background-accent-yellow-subtle-pressed: darken(@yellow, 25%);
+      --ds-background-accent-yellow-bolder: @yellow;
+      --ds-background-accent-yellow-bolder-hovered: lighten(@yellow, 5%);
+      --ds-background-accent-yellow-bolder-pressed: lighten(@yellow, 10%);
+
+      --ds-background-accent-green-subtlest: darken(@green, 65%);
+      --ds-background-accent-green-subtlest-hovered: darken(@green, 55%);
+      --ds-background-accent-green-subtlest-pressed: darken(@green, 45%);
+      --ds-background-accent-green-subtler: darken(@green, 50%);
+      --ds-background-accent-green-subtler-hovered: darken(@green, 45%);
+      --ds-background-accent-green-subtler-pressed: darken(@green, 40%);
+      --ds-background-accent-green-subtle: darken(@green, 35%);
+      --ds-background-accent-green-subtle-hovered: darken(@green, 30%);
+      --ds-background-accent-green-subtle-pressed: darken(@green, 25%);
+      --ds-background-accent-green-bolder: @green;
+      --ds-background-accent-green-bolder-hovered: lighten(@green, 5%);
+      --ds-background-accent-green-bolder-pressed: lighten(@green, 10%);
+
+      --ds-background-accent-teal-subtlest: darken(@teal, 65%);
+      --ds-background-accent-teal-subtlest-hovered: darken(@teal, 55%);
+      --ds-background-accent-teal-subtlest-pressed: darken(@teal, 45%);
+      --ds-background-accent-teal-subtler: darken(@teal, 50%);
+      --ds-background-accent-teal-subtler-hovered: darken(@teal, 45%);
+      --ds-background-accent-teal-subtler-pressed: darken(@teal, 40%);
+      --ds-background-accent-teal-subtle: darken(@teal, 35%);
+      --ds-background-accent-teal-subtle-hovered: darken(@teal, 30%);
+      --ds-background-accent-teal-subtle-pressed: darken(@teal, 25%);
+      --ds-background-accent-teal-bolder: @teal;
+      --ds-background-accent-teal-bolder-hovered: lighten(@teal, 5%);
+      --ds-background-accent-teal-bolder-pressed: lighten(@teal, 10%);
+
+      --ds-background-accent-blue-subtlest: darken(@blue, 65%);
+      --ds-background-accent-blue-subtlest-hovered: darken(@blue, 55%);
+      --ds-background-accent-blue-subtlest-pressed: darken(@blue, 45%);
+      --ds-background-accent-blue-subtler: darken(@blue, 50%);
+      --ds-background-accent-blue-subtler-hovered: darken(@blue, 45%);
+      --ds-background-accent-blue-subtler-pressed: darken(@blue, 40%);
+      --ds-background-accent-blue-subtle: darken(@blue, 35%);
+      --ds-background-accent-blue-subtle-hovered: darken(@blue, 30%);
+      --ds-background-accent-blue-subtle-pressed: darken(@blue, 25%);
+      --ds-background-accent-blue-bolder: @blue;
+      --ds-background-accent-blue-bolder-hovered: lighten(@blue, 5%);
+      --ds-background-accent-blue-bolder-pressed: lighten(@blue, 10%);
+
+      --ds-background-accent-purple-subtlest: darken(@mauve, 65%);
+      --ds-background-accent-purple-subtlest-hovered: darken(@mauve, 55%);
+      --ds-background-accent-purple-subtlest-pressed: darken(@mauve, 45%);
+      --ds-background-accent-purple-subtler: darken(@mauve, 50%);
+      --ds-background-accent-purple-subtler-hovered: darken(@mauve, 45%);
+      --ds-background-accent-purple-subtler-pressed: darken(@mauve, 40%);
+      --ds-background-accent-purple-subtle: darken(@mauve, 35%);
+      --ds-background-accent-purple-subtle-hovered: darken(@mauve, 30%);
+      --ds-background-accent-purple-subtle-pressed: darken(@mauve, 25%);
+      --ds-background-accent-purple-bolder: @mauve;
+      --ds-background-accent-purple-bolder-hovered: lighten(@mauve, 5%);
+      --ds-background-accent-purple-bolder-pressed: lighten(@mauve, 10%);
+
+      --ds-background-accent-magenta-subtlest: darken(@pink, 65%);
+      --ds-background-accent-magenta-subtlest-hovered: darken(@pink, 55%);
+      --ds-background-accent-magenta-subtlest-pressed: darken(@pink, 45%);
+      --ds-background-accent-magenta-subtler: darken(@pink, 50%);
+      --ds-background-accent-magenta-subtler-hovered: darken(@pink, 45%);
+      --ds-background-accent-magenta-subtler-pressed: darken(@pink, 40%);
+      --ds-background-accent-magenta-subtle: darken(@pink, 35%);
+      --ds-background-accent-magenta-subtle-hovered: darken(@pink, 30%);
+      --ds-background-accent-magenta-subtle-pressed: darken(@pink, 25%);
+      --ds-background-accent-magenta-bolder: @pink;
+      --ds-background-accent-magenta-bolder-hovered: lighten(@pink, 5%);
+      --ds-background-accent-magenta-bolder-pressed: lighten(@pink, 10%);
+
+      --ds-background-accent-gray-subtlest: @mantle;
+      --ds-background-accent-gray-subtlest-hovered: lighten(@mantle, 10%);
+      --ds-background-accent-gray-subtlest-pressed: lighten(@mantle, 20%);
+      --ds-background-accent-gray-subtler: @surface0;
+      --ds-background-accent-gray-subtler-hovered: lighten(@surface0, 10%);
+      --ds-background-accent-gray-subtler-pressed: lighten(@surface0, 20%);
+      --ds-background-accent-gray-subtle: @surface1;
+      --ds-background-accent-gray-subtle-hovered: lighten(@surface1, 10%);
+      --ds-background-accent-gray-subtle-pressed: lighten(@surface1, 20%);
+      --ds-background-accent-gray-bolder: @surface2;
+      --ds-background-accent-gray-bolder-hovered: lighten(@surface2, 10%);
+      --ds-background-accent-gray-bolder-pressed: lighten(@surface2, 20%);
+
+      --ds-background-disabled: #bdbdbd0a;
+      --ds-background-input: @mantle;
+      --ds-background-input-hovered: #2b2c2f;
+      --ds-background-input-pressed: #242528;
+      --ds-background-inverse-subtle: #ffffff29;
+      --ds-background-inverse-subtle-hovered: #ffffff3d;
+      --ds-background-inverse-subtle-pressed: #ffffff52;
+      --ds-background-neutral: #ceced912;
+      --ds-background-neutral-hovered: #e3e4f21f;
+      --ds-background-neutral-pressed: #e5e9f640;
+      --ds-background-neutral-subtle: #00000000;
+      --ds-background-neutral-subtle-hovered: #ceced912;
+      --ds-background-neutral-subtle-pressed: #e3e4f21f;
+      --ds-background-neutral-bold: #cecfd2;
+      --ds-background-neutral-bold-hovered: #bfc1c4;
+      --ds-background-neutral-bold-pressed: #a9abaf;
+      --ds-background-selected: #1c2b42;
+      --ds-background-selected-hovered: #123263;
+      --ds-background-selected-pressed: #1558bc;
+      --ds-background-selected-bold: #669df1;
+      --ds-background-selected-bold-hovered: #8fb8f6;
+      --ds-background-selected-bold-pressed: #cfe1fd;
+      --ds-background-brand-subtlest: #1c2b42;
+      --ds-background-brand-subtlest-hovered: #123263;
+      --ds-background-brand-subtlest-pressed: #1558bc;
+      --ds-background-brand-bold: #669df1;
+      --ds-background-brand-bold-hovered: #8fb8f6;
+      --ds-background-brand-bold-pressed: #cfe1fd;
+      --ds-background-brand-boldest: #e9f2fe;
+      --ds-background-brand-boldest-hovered: #cfe1fd;
+      --ds-background-brand-boldest-pressed: #8fb8f6;
+
+      --ds-background-danger: #42221f;
+      --ds-background-danger-hovered: #5d1f1a;
+      --ds-background-danger-pressed: #ae2e24;
+      --ds-background-danger-bold: #f87168;
+      --ds-background-danger-bold-hovered: #fd9891;
+      --ds-background-danger-bold-pressed: #ffd5d2;
+
+      --ds-background-warning: #3a2c1f;
+      --ds-background-warning-hovered: #693200;
+      --ds-background-warning-pressed: #9e4c00;
+      --ds-background-warning-bold: #fbc828;
+      --ds-background-warning-bold-hovered: #fca700;
+      --ds-background-warning-bold-pressed: #f68909;
+
+      --ds-background-success: #28311b;
+      --ds-background-success-hovered: #37471f;
+      --ds-background-success-pressed: #4c6b1f;
+      --ds-background-success-bold: #94c748;
+      --ds-background-success-bold-hovered: #b3df72;
+      --ds-background-success-bold-pressed: #d3f1a7;
+
+      --ds-background-discovery: #35243f;
+      --ds-background-discovery-hovered: #48245d;
+      --ds-background-discovery-pressed: #803fa5;
+      --ds-background-discovery-bold: #c97cf4;
+      --ds-background-discovery-bold-hovered: #d8a0f7;
+      --ds-background-discovery-bold-pressed: #eed7fc;
+
+      --ds-background-information: #1c2b42;
+      --ds-background-information-hovered: #123263;
+      --ds-background-information-pressed: #1558bc;
+      --ds-background-information-bold: #669df1;
+      --ds-background-information-bold-hovered: #8fb8f6;
+      --ds-background-information-bold-pressed: #cfe1fd;
+
+      --ds-blanket: #10121499;
+      --ds-blanket-selected: #1d7afc14;
+      --ds-blanket-danger: #e3493514;
+
+      --ds-interaction-hovered: #ffffff33;
+      --ds-interaction-pressed: #ffffff5c;
+
+      --ds-skeleton: #ceced912;
+      --ds-skeleton-subtle: #bdbdbd0a;
+
+      --ds-chart-categorical-1: #4688ec;
+      --ds-chart-categorical-1-hovered: #669df1;
+      --ds-chart-categorical-2: #94c748;
+      --ds-chart-categorical-2-hovered: #b3df72;
+      --ds-chart-categorical-3: #c97cf4;
+      --ds-chart-categorical-3-hovered: #d8a0f7;
+      --ds-chart-categorical-4: #fca700;
+      --ds-chart-categorical-4-hovered: #fbc828;
+      --ds-chart-categorical-5: #1558bc;
+      --ds-chart-categorical-5-hovered: #1868db;
+      --ds-chart-categorical-6: #964ac0;
+      --ds-chart-categorical-6-hovered: #af59e1;
+      --ds-chart-categorical-7: #42b2d7;
+      --ds-chart-categorical-7-hovered: #6cc3e0;
+      --ds-chart-categorical-8: #e06c00;
+      --ds-chart-categorical-8-hovered: #f68909;
+      --ds-chart-lime-bold: #82b536;
+      --ds-chart-lime-bold-hovered: #94c748;
+      --ds-chart-lime-bolder: #94c748;
+      --ds-chart-lime-bolder-hovered: #b3df72;
+      --ds-chart-lime-boldest: #b3df72;
+      --ds-chart-lime-boldest-hovered: #d3f1a7;
+      --ds-chart-neutral: #7e8188;
+      --ds-chart-neutral-hovered: #96999e;
+      --ds-chart-red-bold: #e2483d;
+      --ds-chart-red-bold-hovered: #f15b50;
+      --ds-chart-red-bolder: #f15b50;
+      --ds-chart-red-bolder-hovered: #f87168;
+      --ds-chart-red-boldest: #fd9891;
+      --ds-chart-red-boldest-hovered: #ffd5d2;
+      --ds-chart-orange-bold: #f68909;
+      --ds-chart-orange-bold-hovered: #fca700;
+      --ds-chart-orange-bolder: #fca700;
+      --ds-chart-orange-bolder-hovered: #fbc828;
+      --ds-chart-orange-boldest: #fbc828;
+      --ds-chart-orange-boldest-hovered: #fce4a6;
+      --ds-chart-yellow-bold: #cf9f02;
+      --ds-chart-yellow-bold-hovered: #ddb30e;
+      --ds-chart-yellow-bolder: #ddb30e;
+      --ds-chart-yellow-bolder-hovered: #eed12b;
+      --ds-chart-yellow-boldest: #eed12b;
+      --ds-chart-yellow-boldest-hovered: #f5e989;
+      --ds-chart-green-bold: #2abb7f;
+      --ds-chart-green-bold-hovered: #4bce97;
+      --ds-chart-green-bolder: #4bce97;
+      --ds-chart-green-bolder-hovered: #7ee2b8;
+      --ds-chart-green-boldest: #7ee2b8;
+      --ds-chart-green-boldest-hovered: #baf3db;
+      --ds-chart-teal-bold: #42b2d7;
+      --ds-chart-teal-bold-hovered: #6cc3e0;
+      --ds-chart-teal-bolder: #6cc3e0;
+      --ds-chart-teal-bolder-hovered: #9dd9ee;
+      --ds-chart-teal-boldest: #9dd9ee;
+      --ds-chart-teal-boldest-hovered: #c6edfb;
+      --ds-chart-blue-bold: #357de8;
+      --ds-chart-blue-bold-hovered: #4688ec;
+      --ds-chart-blue-bolder: #4688ec;
+      --ds-chart-blue-bolder-hovered: #669df1;
+      --ds-chart-blue-boldest: #8fb8f6;
+      --ds-chart-blue-boldest-hovered: #cfe1fd;
+      --ds-chart-purple-bold: #af59e1;
+      --ds-chart-purple-bold-hovered: #bf63f3;
+      --ds-chart-purple-bolder: #bf63f3;
+      --ds-chart-purple-bolder-hovered: #c97cf4;
+      --ds-chart-purple-boldest: #d8a0f7;
+      --ds-chart-purple-boldest-hovered: #eed7fc;
+      --ds-chart-magenta-bold: #cd519d;
+      --ds-chart-magenta-bold-hovered: #da62ac;
+      --ds-chart-magenta-bolder: #da62ac;
+      --ds-chart-magenta-bolder-hovered: #e774bb;
+      --ds-chart-magenta-boldest: #f797d2;
+      --ds-chart-magenta-boldest-hovered: #fdd0ec;
+      --ds-chart-gray-bold: #7e8188;
+      --ds-chart-gray-bold-hovered: #96999e;
+      --ds-chart-gray-bolder: #96999e;
+      --ds-chart-gray-bolder-hovered: #a9abaf;
+      --ds-chart-gray-boldest: #a9abaf;
+      --ds-chart-gray-boldest-hovered: #bfc1c4;
+      --ds-chart-brand: #4688ec;
+      --ds-chart-brand-hovered: #669df1;
+      --ds-chart-danger: #e2483d;
+      --ds-chart-danger-hovered: #f15b50;
+      --ds-chart-danger-bold: #f87168;
+      --ds-chart-danger-bold-hovered: #fd9891;
+      --ds-chart-warning: #f68909;
+      --ds-chart-warning-hovered: #fca700;
+      --ds-chart-warning-bold: #fbc828;
+      --ds-chart-warning-bold-hovered: #fce4a6;
+      --ds-chart-success: #82b536;
+      --ds-chart-success-hovered: #94c748;
+      --ds-chart-success-bold: #b3df72;
+      --ds-chart-success-bold-hovered: #d3f1a7;
+      --ds-chart-discovery: #bf63f3;
+      --ds-chart-discovery-hovered: #c97cf4;
+      --ds-chart-discovery-bold: #d8a0f7;
+      --ds-chart-discovery-bold-hovered: #eed7fc;
+      --ds-chart-information: #4688ec;
+      --ds-chart-information-hovered: #669df1;
+      --ds-chart-information-bold: #8fb8f6;
+      --ds-chart-information-bold-hovered: #cfe1fd;
+
+      --ds-surface: @base;
+      --ds-surface-hovered: @mantle;
+      --ds-surface-pressed: @crust;
+      --ds-surface-overlay: @mantle;
+      --ds-surface-overlay-hovered: @base;
+      --ds-surface-overlay-pressed: @mantle;
+      --ds-surface-raised: @mantle;
+      --ds-surface-raised-hovered: @base;
+      --ds-surface-raised-pressed: @mantle;
+      --ds-surface-sunken: @mantle;
+
+      --ds-shadow-overflow: 0px 0px 12px fade(@crust, 50%), 0px 0px 1px fade(@crust, 50%);
+      --ds-shadow-overflow-perimeter: #01040480;
+      --ds-shadow-overflow-spread: #0104048f;
+      --ds-shadow-overlay:
+        0px 0px 0px 1px fade(@crust, 80%), 0px 8px 12px fade(@crust, 50%), 0px 0px 1px 1px fade(
+        @crust,
+        80%
+      );
+      --ds-shadow-raised:
+        0px 0px 0px 1px fade(@crust, 0%), 0px 1px 1px fade(@crust, 50%), 0px 0px 1px fade(
+        @crust,
+        50%
+      );
+
+      --ds-opacity-disabled: 0.4;
+      --ds-opacity-loading: 0.2;
+
+      --ds-UNSAFE-transparent: transparent;
+      --ds-elevation-surface-current: #1f1f21;
     }
-
-    html[data-color-mode="light"][data-theme~="light:light"] {
-        #catppuccin(@lightFlavor);
-    }
-
-    #catppuccin(@flavor) {
-        @rosewater: @catppuccin[@@flavor][@rosewater];
-        @flamingo: @catppuccin[@@flavor][@flamingo];
-        @pink: @catppuccin[@@flavor][@pink];
-        @mauve: @catppuccin[@@flavor][@mauve];
-        @red: @catppuccin[@@flavor][@red];
-        @maroon: @catppuccin[@@flavor][@maroon];
-        @peach: @catppuccin[@@flavor][@peach];
-        @yellow: @catppuccin[@@flavor][@yellow];
-        @green: @catppuccin[@@flavor][@green];
-        @teal: @catppuccin[@@flavor][@teal];
-        @sky: @catppuccin[@@flavor][@sky];
-        @sapphire: @catppuccin[@@flavor][@sapphire];
-        @blue: @catppuccin[@@flavor][@blue];
-        @lavender: @catppuccin[@@flavor][@lavender];
-        @text: @catppuccin[@@flavor][@text];
-        @subtext1: @catppuccin[@@flavor][@subtext1];
-        @subtext0: @catppuccin[@@flavor][@subtext0];
-        @overlay2: @catppuccin[@@flavor][@overlay2];
-        @overlay1: @catppuccin[@@flavor][@overlay1];
-        @overlay0: @catppuccin[@@flavor][@overlay0];
-        @surface2: @catppuccin[@@flavor][@surface2];
-        @surface1: @catppuccin[@@flavor][@surface1];
-        @surface0: @catppuccin[@@flavor][@surface0];
-        @base: @catppuccin[@@flavor][@base];
-        @mantle: @catppuccin[@@flavor][@mantle];
-        @crust: @catppuccin[@@flavor][@crust];
-        @accent: @catppuccin[@@flavor][@@accentColor];
-
-        color-scheme: if(@flavor =latte, light, dark);
-
-        &,
-        * {
-            --ds-text: @text;
-
-            --ds-text-accent-lime: @green;
-            --ds-text-accent-lime-bolder: @green;
-            --ds-text-accent-red: @red;
-            --ds-text-accent-red-bolder: @red;
-            --ds-text-accent-orange: @peach;
-            --ds-text-accent-orange-bolder: @peach;
-            --ds-text-accent-yellow: @yellow;
-            --ds-text-accent-yellow-bolder: @yellow;
-            --ds-text-accent-green: @green;
-            --ds-text-accent-green-bolder: @green;
-            --ds-text-accent-teal: @teal;
-            --ds-text-accent-teal-bolder: @teal;
-            --ds-text-accent-blue: @blue;
-            --ds-text-accent-blue-bolder: @blue;
-            --ds-text-accent-purple: @mauve;
-            --ds-text-accent-purple-bolder: @mauve;
-            --ds-text-accent-magenta: @pink;
-            --ds-text-accent-magenta-bolder: @pink;
-            --ds-text-accent-gray: @subtext0;
-            --ds-text-accent-gray-bolder: @subtext0;
-
-            --ds-text-disabled: @surface0;
-            --ds-text-inverse: @text; /* TODO */
-            --ds-text-selected: @overlay2 opacity 0.3;
-            --ds-text-brand: @blue;
-            --ds-text-danger: @red;
-            --ds-text-warning: @yellow;
-            --ds-text-warning-inverse: @text; /* TODO */
-            --ds-text-success: @green;
-            --ds-text-discovery: @mauve;
-            --ds-text-information: @sky;
-            --ds-text-subtlest: @subtext0;
-            --ds-text-subtle: @subtext1;
-
-            --ds-link: @blue;
-            --ds-link-pressed: @sky;
-            --ds-link-visited: @lavender;
-            --ds-link-visited-pressed: @sky;
-
-            --ds-icon: @accent;
-            --ds-icon-accent-lime: @green;
-            --ds-icon-accent-red: @red;
-            --ds-icon-accent-orange: @peach;
-            --ds-icon-accent-yellow: @yellow;
-            --ds-icon-accent-green: @green;
-            --ds-icon-accent-teal: @teal;
-            --ds-icon-accent-blue: @blue;
-            --ds-icon-accent-purple: @mauve;
-            --ds-icon-accent-magenta: @pink;
-            --ds-icon-accent-gray: @surface1;
-            --ds-icon-disabled: @overlay1;
-            --ds-icon-inverse: #1F1F21;
-            --ds-icon-selected: #669DF1;
-            --ds-icon-brand: @blue;
-            --ds-icon-danger: @red;
-            --ds-icon-warning: @yellow;
-            --ds-icon-warning-inverse: #1F1F21;
-            --ds-icon-success: @green;
-            --ds-icon-discovery: @mauve;
-            --ds-icon-information: @blue;
-            --ds-icon-subtlest: #96999E;
-            --ds-icon-subtle: #A9ABAF;
-
-            --ds-border: @surface0;
-            --ds-border-accent-lime: @green;
-            --ds-border-accent-red: @red;
-            --ds-border-accent-orange: @peach;
-            --ds-border-accent-yellow: @yellow;
-            --ds-border-accent-green: @green;
-            --ds-border-accent-teal: @teal;
-            --ds-border-accent-blue: @blue;
-            --ds-border-accent-purple: @mauve;
-            --ds-border-accent-magenta: @pink;
-            --ds-border-accent-gray: @surface1;
-            --ds-border-disabled: #CECED912;
-            --ds-border-focused: #8FB8F6;
-            --ds-border-input: #7E8188;
-            --ds-border-inverse: #18191A;
-            --ds-border-selected: #669DF1;
-            --ds-border-brand: #669DF1;
-            --ds-border-danger: @red;
-            --ds-border-warning: @yellow;
-            --ds-border-success: @green;
-            --ds-border-discovery: @mauve;
-            --ds-border-information: @blue;
-            --ds-border-bold: #7E8188;
-
-            --ds-background-accent-lime-subtlest: #28311B;
-            --ds-background-accent-lime-subtlest-hovered: #37471F;
-            --ds-background-accent-lime-subtlest-pressed: #4C6B1F;
-            --ds-background-accent-lime-subtler: #37471F;
-            --ds-background-accent-lime-subtler-hovered: #4C6B1F;
-            --ds-background-accent-lime-subtler-pressed: #5B7F24;
-            --ds-background-accent-lime-subtle: #4C6B1F;
-            --ds-background-accent-lime-subtle-hovered: #37471F;
-            --ds-background-accent-lime-subtle-pressed: #28311B;
-            --ds-background-accent-lime-bolder: #94C748;
-            --ds-background-accent-lime-bolder-hovered: #B3DF72;
-            --ds-background-accent-lime-bolder-pressed: #D3F1A7;
-
-            --ds-background-accent-red-subtlest: #42221F;
-            --ds-background-accent-red-subtlest-hovered: #5D1F1A;
-            --ds-background-accent-red-subtlest-pressed: #AE2E24;
-            --ds-background-accent-red-subtler: #5D1F1A;
-            --ds-background-accent-red-subtler-hovered: #AE2E24;
-            --ds-background-accent-red-subtler-pressed: #C9372C;
-            --ds-background-accent-red-subtle: #AE2E24;
-            --ds-background-accent-red-subtle-hovered: #5D1F1A;
-            --ds-background-accent-red-subtle-pressed: #42221F;
-            --ds-background-accent-red-bolder: #F87168;
-            --ds-background-accent-red-bolder-hovered: #FD9891;
-            --ds-background-accent-red-bolder-pressed: #FFD5D2;
-
-            --ds-background-accent-orange-subtlest: #3A2C1F;
-            --ds-background-accent-orange-subtlest-hovered: #693200;
-            --ds-background-accent-orange-subtlest-pressed: #9E4C00;
-            --ds-background-accent-orange-subtler: #693200;
-            --ds-background-accent-orange-subtler-hovered: #9E4C00;
-            --ds-background-accent-orange-subtler-pressed: #BD5B00;
-            --ds-background-accent-orange-subtle: #9E4C00;
-            --ds-background-accent-orange-subtle-hovered: #693200;
-            --ds-background-accent-orange-subtle-pressed: #3A2C1F;
-            --ds-background-accent-orange-bolder: #FCA700;
-            --ds-background-accent-orange-bolder-hovered: #FBC828;
-            --ds-background-accent-orange-bolder-pressed: #FCE4A6;
-
-            --ds-background-accent-yellow-subtlest: #332E1B;
-            --ds-background-accent-yellow-subtlest-hovered: #533F04;
-            --ds-background-accent-yellow-subtlest-pressed: #7F5F01;
-            --ds-background-accent-yellow-subtler: #533F04;
-            --ds-background-accent-yellow-subtler-hovered: #7F5F01;
-            --ds-background-accent-yellow-subtler-pressed: #946F00;
-            --ds-background-accent-yellow-subtle: #7F5F01;
-            --ds-background-accent-yellow-subtle-hovered: #533F04;
-            --ds-background-accent-yellow-subtle-pressed: #332E1B;
-            --ds-background-accent-yellow-bolder: #DDB30E;
-            --ds-background-accent-yellow-bolder-hovered: #EED12B;
-            --ds-background-accent-yellow-bolder-pressed: #F5E989;
-
-            --ds-background-accent-green-subtlest: #1C3329;
-            --ds-background-accent-green-subtlest-hovered: #164B35;
-            --ds-background-accent-green-subtlest-pressed: #216E4E;
-            --ds-background-accent-green-subtler: #164B35;
-            --ds-background-accent-green-subtler-hovered: #216E4E;
-            --ds-background-accent-green-subtler-pressed: #1F845A;
-            --ds-background-accent-green-subtle: #216E4E;
-            --ds-background-accent-green-subtle-hovered: #164B35;
-            --ds-background-accent-green-subtle-pressed: #1C3329;
-            --ds-background-accent-green-bolder: #4BCE97;
-            --ds-background-accent-green-bolder-hovered: #7EE2B8;
-            --ds-background-accent-green-bolder-pressed: #BAF3DB;
-
-            --ds-background-accent-teal-subtlest: #1E3137;
-            --ds-background-accent-teal-subtlest-hovered: #164555;
-            --ds-background-accent-teal-subtlest-pressed: #206A83;
-            --ds-background-accent-teal-subtler: #164555;
-            --ds-background-accent-teal-subtler-hovered: #206A83;
-            --ds-background-accent-teal-subtler-pressed: #227D9B;
-            --ds-background-accent-teal-subtle: #206A83;
-            --ds-background-accent-teal-subtle-hovered: #164555;
-            --ds-background-accent-teal-subtle-pressed: #1E3137;
-            --ds-background-accent-teal-bolder: #6CC3E0;
-            --ds-background-accent-teal-bolder-hovered: #9DD9EE;
-            --ds-background-accent-teal-bolder-pressed: #C6EDFB;
-
-            --ds-background-accent-blue-subtlest: #1C2B42;
-            --ds-background-accent-blue-subtlest-hovered: #123263;
-            --ds-background-accent-blue-subtlest-pressed: #1558BC;
-            --ds-background-accent-blue-subtler: #123263;
-            --ds-background-accent-blue-subtler-hovered: #1558BC;
-            --ds-background-accent-blue-subtler-pressed: #1868DB;
-            --ds-background-accent-blue-subtle: #1558BC;
-            --ds-background-accent-blue-subtle-hovered: #123263;
-            --ds-background-accent-blue-subtle-pressed: #1C2B42;
-            --ds-background-accent-blue-bolder: #669DF1;
-            --ds-background-accent-blue-bolder-hovered: #8FB8F6;
-            --ds-background-accent-blue-bolder-pressed: #CFE1FD;
-
-            --ds-background-accent-purple-subtlest: darken(@mauve, 65%);
-            --ds-background-accent-purple-subtlest-hovered:  darken(@mauve, 55%);
-            --ds-background-accent-purple-subtlest-pressed:  darken(@mauve, 45%);
-            --ds-background-accent-purple-subtler: darken(@mauve, 50%);
-            --ds-background-accent-purple-subtler-hovered:  darken(@mauve, 45%);
-            --ds-background-accent-purple-subtler-pressed:  darken(@mauve, 40%);
-            --ds-background-accent-purple-subtle: darken(@mauve, 35%);
-            --ds-background-accent-purple-subtle-hovered:  darken(@mauve, 30%);
-            --ds-background-accent-purple-subtle-pressed:  darken(@mauve, 25%);
-            --ds-background-accent-purple-bolder: @mauve;
-            --ds-background-accent-purple-bolder-hovered:  lighten(@mauve, 5%);
-            --ds-background-accent-purple-bolder-pressed:  lighten(@mauve, 10%);
-
-            --ds-background-accent-magenta-subtlest: darken(@pink, 90%);
-            --ds-background-accent-magenta-subtlest-hovered: darken(@pink, 80%);
-            --ds-background-accent-magenta-subtlest-pressed: darken(@pink, 70%);
-            --ds-background-accent-magenta-subtler: darken(@pink, 60%);
-            --ds-background-accent-magenta-subtler-hovered: darken(@pink, 50%);
-            --ds-background-accent-magenta-subtler-pressed: darken(@pink, 40%);
-            --ds-background-accent-magenta-subtle: darken(@pink, 30%);
-            --ds-background-accent-magenta-subtle-hovered: darken(@pink, 20%);
-            --ds-background-accent-magenta-subtle-pressed: darken(@pink, 10%);
-            --ds-background-accent-magenta-bolder: @pink;
-            --ds-background-accent-magenta-bolder-hovered: lighten(@pink, 10%);
-            --ds-background-accent-magenta-bolder-pressed: lighten(@pink, 20%);
-
-            --ds-background-accent-gray-subtlest: @mantle;
-            --ds-background-accent-gray-subtlest-hovered: lighten(@mantle, 10%);
-            --ds-background-accent-gray-subtlest-pressed: lighten(@mantle, 20%);
-            --ds-background-accent-gray-subtler: @surface0;
-            --ds-background-accent-gray-subtler-hovered: lighten(@surface0, 10%);
-            --ds-background-accent-gray-subtler-pressed: lighten(@surface0, 20%);
-            --ds-background-accent-gray-subtle: @surface1;
-            --ds-background-accent-gray-subtle-hovered: lighten(@surface1, 10%);
-            --ds-background-accent-gray-subtle-pressed: lighten(@surface1, 20%);
-            --ds-background-accent-gray-bolder: @surface2;
-            --ds-background-accent-gray-bolder-hovered: lighten(@surface2, 10%);
-            --ds-background-accent-gray-bolder-pressed: lighten(@surface2, 20%);
-            
-            --ds-background-disabled: #BDBDBD0A;
-            --ds-background-input: @mantle;
-            --ds-background-input-hovered: #2B2C2F;
-            --ds-background-input-pressed: #242528;
-            --ds-background-inverse-subtle: #FFFFFF29;
-            --ds-background-inverse-subtle-hovered: #FFFFFF3D;
-            --ds-background-inverse-subtle-pressed: #FFFFFF52;
-            --ds-background-neutral: #CECED912;
-            --ds-background-neutral-hovered: #E3E4F21F;
-            --ds-background-neutral-pressed: #E5E9F640;
-            --ds-background-neutral-subtle: #00000000;
-            --ds-background-neutral-subtle-hovered: #CECED912;
-            --ds-background-neutral-subtle-pressed: #E3E4F21F;
-            --ds-background-neutral-bold: #CECFD2;
-            --ds-background-neutral-bold-hovered: #BFC1C4;
-            --ds-background-neutral-bold-pressed: #A9ABAF;
-            --ds-background-selected: #1C2B42;
-            --ds-background-selected-hovered: #123263;
-            --ds-background-selected-pressed: #1558BC;
-            --ds-background-selected-bold: #669DF1;
-            --ds-background-selected-bold-hovered: #8FB8F6;
-            --ds-background-selected-bold-pressed: #CFE1FD;
-            --ds-background-brand-subtlest: #1C2B42;
-            --ds-background-brand-subtlest-hovered: #123263;
-            --ds-background-brand-subtlest-pressed: #1558BC;
-            --ds-background-brand-bold: #669DF1;
-            --ds-background-brand-bold-hovered: #8FB8F6;
-            --ds-background-brand-bold-pressed: #CFE1FD;
-            --ds-background-brand-boldest: #E9F2FE;
-            --ds-background-brand-boldest-hovered: #CFE1FD;
-            --ds-background-brand-boldest-pressed: #8FB8F6;
-            --ds-background-danger: #42221F;
-            --ds-background-danger-hovered: #5D1F1A;
-            --ds-background-danger-pressed: #AE2E24;
-            --ds-background-danger-bold: #F87168;
-            --ds-background-danger-bold-hovered: #FD9891;
-            --ds-background-danger-bold-pressed: #FFD5D2;
-            --ds-background-warning: #3A2C1F;
-            --ds-background-warning-hovered: #693200;
-            --ds-background-warning-pressed: #9E4C00;
-            --ds-background-warning-bold: #FBC828;
-            --ds-background-warning-bold-hovered: #FCA700;
-            --ds-background-warning-bold-pressed: #F68909;
-            --ds-background-success: #28311B;
-            --ds-background-success-hovered: #37471F;
-            --ds-background-success-pressed: #4C6B1F;
-            --ds-background-success-bold: #94C748;
-            --ds-background-success-bold-hovered: #B3DF72;
-            --ds-background-success-bold-pressed: #D3F1A7;
-            --ds-background-discovery: #35243F;
-            --ds-background-discovery-hovered: #48245D;
-            --ds-background-discovery-pressed: #803FA5;
-            --ds-background-discovery-bold: #C97CF4;
-            --ds-background-discovery-bold-hovered: #D8A0F7;
-            --ds-background-discovery-bold-pressed: #EED7FC;
-            --ds-background-information: #1C2B42;
-            --ds-background-information-hovered: #123263;
-            --ds-background-information-pressed: #1558BC;
-            --ds-background-information-bold: #669DF1;
-            --ds-background-information-bold-hovered: #8FB8F6;
-            --ds-background-information-bold-pressed: #CFE1FD;
-
-            --ds-blanket: #10121499;
-            --ds-blanket-selected: #1D7AFC14;
-            --ds-blanket-danger: #E3493514;
-
-            --ds-interaction-hovered: #ffffff33;
-            --ds-interaction-pressed: #ffffff5c;
-
-            --ds-skeleton: #CECED912;
-            --ds-skeleton-subtle: #BDBDBD0A;
-
-            --ds-chart-categorical-1: #4688EC;
-            --ds-chart-categorical-1-hovered: #669DF1;
-            --ds-chart-categorical-2: #94C748;
-            --ds-chart-categorical-2-hovered: #B3DF72;
-            --ds-chart-categorical-3: #C97CF4;
-            --ds-chart-categorical-3-hovered: #D8A0F7;
-            --ds-chart-categorical-4: #FCA700;
-            --ds-chart-categorical-4-hovered: #FBC828;
-            --ds-chart-categorical-5: #1558BC;
-            --ds-chart-categorical-5-hovered: #1868DB;
-            --ds-chart-categorical-6: #964AC0;
-            --ds-chart-categorical-6-hovered: #AF59E1;
-            --ds-chart-categorical-7: #42B2D7;
-            --ds-chart-categorical-7-hovered: #6CC3E0;
-            --ds-chart-categorical-8: #E06C00;
-            --ds-chart-categorical-8-hovered: #F68909;
-            --ds-chart-lime-bold: #82B536;
-            --ds-chart-lime-bold-hovered: #94C748;
-            --ds-chart-lime-bolder: #94C748;
-            --ds-chart-lime-bolder-hovered: #B3DF72;
-            --ds-chart-lime-boldest: #B3DF72;
-            --ds-chart-lime-boldest-hovered: #D3F1A7;
-            --ds-chart-neutral: #7E8188;
-            --ds-chart-neutral-hovered: #96999E;
-            --ds-chart-red-bold: #E2483D;
-            --ds-chart-red-bold-hovered: #F15B50;
-            --ds-chart-red-bolder: #F15B50;
-            --ds-chart-red-bolder-hovered: #F87168;
-            --ds-chart-red-boldest: #FD9891;
-            --ds-chart-red-boldest-hovered: #FFD5D2;
-            --ds-chart-orange-bold: #F68909;
-            --ds-chart-orange-bold-hovered: #FCA700;
-            --ds-chart-orange-bolder: #FCA700;
-            --ds-chart-orange-bolder-hovered: #FBC828;
-            --ds-chart-orange-boldest: #FBC828;
-            --ds-chart-orange-boldest-hovered: #FCE4A6;
-            --ds-chart-yellow-bold: #CF9F02;
-            --ds-chart-yellow-bold-hovered: #DDB30E;
-            --ds-chart-yellow-bolder: #DDB30E;
-            --ds-chart-yellow-bolder-hovered: #EED12B;
-            --ds-chart-yellow-boldest: #EED12B;
-            --ds-chart-yellow-boldest-hovered: #F5E989;
-            --ds-chart-green-bold: #2ABB7F;
-            --ds-chart-green-bold-hovered: #4BCE97;
-            --ds-chart-green-bolder: #4BCE97;
-            --ds-chart-green-bolder-hovered: #7EE2B8;
-            --ds-chart-green-boldest: #7EE2B8;
-            --ds-chart-green-boldest-hovered: #BAF3DB;
-            --ds-chart-teal-bold: #42B2D7;
-            --ds-chart-teal-bold-hovered: #6CC3E0;
-            --ds-chart-teal-bolder: #6CC3E0;
-            --ds-chart-teal-bolder-hovered: #9DD9EE;
-            --ds-chart-teal-boldest: #9DD9EE;
-            --ds-chart-teal-boldest-hovered: #C6EDFB;
-            --ds-chart-blue-bold: #357DE8;
-            --ds-chart-blue-bold-hovered: #4688EC;
-            --ds-chart-blue-bolder: #4688EC;
-            --ds-chart-blue-bolder-hovered: #669DF1;
-            --ds-chart-blue-boldest: #8FB8F6;
-            --ds-chart-blue-boldest-hovered: #CFE1FD;
-            --ds-chart-purple-bold: #AF59E1;
-            --ds-chart-purple-bold-hovered: #BF63F3;
-            --ds-chart-purple-bolder: #BF63F3;
-            --ds-chart-purple-bolder-hovered: #C97CF4;
-            --ds-chart-purple-boldest: #D8A0F7;
-            --ds-chart-purple-boldest-hovered: #EED7FC;
-            --ds-chart-magenta-bold: #CD519D;
-            --ds-chart-magenta-bold-hovered: #DA62AC;
-            --ds-chart-magenta-bolder: #DA62AC;
-            --ds-chart-magenta-bolder-hovered: #E774BB;
-            --ds-chart-magenta-boldest: #F797D2;
-            --ds-chart-magenta-boldest-hovered: #FDD0EC;
-            --ds-chart-gray-bold: #7E8188;
-            --ds-chart-gray-bold-hovered: #96999E;
-            --ds-chart-gray-bolder: #96999E;
-            --ds-chart-gray-bolder-hovered: #A9ABAF;
-            --ds-chart-gray-boldest: #A9ABAF;
-            --ds-chart-gray-boldest-hovered: #BFC1C4;
-            --ds-chart-brand: #4688EC;
-            --ds-chart-brand-hovered: #669DF1;
-            --ds-chart-danger: #E2483D;
-            --ds-chart-danger-hovered: #F15B50;
-            --ds-chart-danger-bold: #F87168;
-            --ds-chart-danger-bold-hovered: #FD9891;
-            --ds-chart-warning: #F68909;
-            --ds-chart-warning-hovered: #FCA700;
-            --ds-chart-warning-bold: #FBC828;
-            --ds-chart-warning-bold-hovered: #FCE4A6;
-            --ds-chart-success: #82B536;
-            --ds-chart-success-hovered: #94C748;
-            --ds-chart-success-bold: #B3DF72;
-            --ds-chart-success-bold-hovered: #D3F1A7;
-            --ds-chart-discovery: #BF63F3;
-            --ds-chart-discovery-hovered: #C97CF4;
-            --ds-chart-discovery-bold: #D8A0F7;
-            --ds-chart-discovery-bold-hovered: #EED7FC;
-            --ds-chart-information: #4688EC;
-            --ds-chart-information-hovered: #669DF1;
-            --ds-chart-information-bold: #8FB8F6;
-            --ds-chart-information-bold-hovered: #CFE1FD;
-
-            --ds-surface: @base;
-            --ds-surface-hovered: @mantle;
-            --ds-surface-pressed: @crust;
-            --ds-surface-overlay: @mantle;
-            --ds-surface-overlay-hovered: @base;
-            --ds-surface-overlay-pressed: @mantle;
-            --ds-surface-raised: @mantle;
-            --ds-surface-raised-hovered: @base;
-            --ds-surface-raised-pressed: @mantle;
-            --ds-surface-sunken: @mantle;
-
-            --ds-shadow-overflow: 0px 0px 12px fade(@crust, 50%), 0px 0px 1px fade(@crust, 50%);
-            --ds-shadow-overflow-perimeter: #01040480;
-            --ds-shadow-overflow-spread: #0104048f;
-            --ds-shadow-overlay: 0px 0px 0px 1px fade(@crust, 80%), 0px 8px 12px fade(@crust, 50%), 0px 0px 1px 1px fade(@crust, 80%);
-            --ds-shadow-raised: 0px 0px 0px 1px fade(@crust, 0%), 0px 1px 1px fade(@crust, 50%), 0px 0px 1px fade(@crust, 50%);
-
-            --ds-opacity-disabled: 0.4;
-            --ds-opacity-loading: 0.2;
-
-            --ds-UNSAFE-transparent: transparent;
-            --ds-elevation-surface-current: #1F1F21;
-        }
-    }
+  }
 }
 
 /* deno-fmt-ignore */

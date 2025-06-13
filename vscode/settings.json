@@ -85,6 +85,12 @@
     "evenBetterToml.formatter.columnWidth": 100,
     "evenBetterToml.formatter.arrayAutoExpand": true,
     "evenBetterToml.formatter.arrayAutoCollapse": true,
+    // YAML
+    "redhat.telemetry.enabled": false,
+    // Formatters
+    "[less][javascript][typescript][html][yaml][json][jsonc]": {
+        "editor.defaultFormatter": "denoland.vscode-deno"
+    },
     // Uncategorised
-    "-----": "-----",
+    "-----": "-----"
 }

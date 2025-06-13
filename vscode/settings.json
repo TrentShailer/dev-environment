@@ -76,6 +76,7 @@
     // Harper
     "harper.dialect": "British",
     "harper.linters.SpelledNumbers": true,
+    "harper.linters.OxfordComma": true,
     "harper.linters.ToDoHyphen": false,
     // TOML
     "evenBetterToml.formatter.allowedBlankLines": 1,

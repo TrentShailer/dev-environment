@@ -1,0 +1,4 @@
+{
+    "deno.enablePaths": ["stylus"],
+    "deno.disablePaths": ["stylus/stylus.json"]
+}

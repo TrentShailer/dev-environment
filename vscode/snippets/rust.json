@@ -30,6 +30,7 @@
     "Create an error function": {
         "prefix": "pub fn error",
         "body": [
+            "#[allow(missing_docs)]",
             "pub fn ${1:error}(source: ${2:source}) -> Self {",
             "    Self::${3:Variant} {",
             "        source,$4",

@@ -31,31 +31,25 @@
     "editor.renderFinalNewline": "dimmed",
     // Editor Behaviour
     "update.showReleaseNotes": false,
-    "editor.linkedEditing": true,
     "editor.inlayHints.enabled": "off",
     "editor.find.cursorMoveOnType": false,
     "editor.formatOnSave": true,
     "explorer.copyRelativePathSeparator": "/",
     "editor.wordWrapColumn": 100,
     "editor.semanticHighlighting.enabled": true,
+    "editor.linkedEditing": false,
+    "workbench.editor.empty.hint": "hidden",
     "[markdown]": {
         "editor.wordWrap": "wordWrapColumn"
     },
     // General VSCode
-    "telemetry.telemetryLevel": "crash",
-    "extensions.ignoreRecommendations": true,
     "settingsSync.ignoredSettings": [
         "workbench.colorTheme",
         "editor.fontSize"
     ],
-    // LLMs and other garbage
-    "chat.commandCenter.enabled": false,
-    "window.commandCenter": false,
+    "extensions.ignoreRecommendations": true,
+    "telemetry.telemetryLevel": "crash",
     "telemetry.feedback.enabled": false,
-    "inlineChat.lineNaturalLanguageHint": false,
-    "inlineChat.lineEmptyHint": false,
-    "terminal.integrated.initialHint": false,
-    "workbench.editor.empty.hint": "hidden",
     // Git
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
@@ -70,6 +64,13 @@
     // Todo Tree
     "todo-tree.general.showActivityBarBadge": false,
     "todo-tree.tree.showCountsInTree": true,
+    "todo-tree.highlights.useColourScheme": true,
+    "todo-tree.highlights.backgroundColourScheme": [
+        "#626880"
+    ],
+    "todo-tree.highlights.foregroundColourScheme": [
+        "#c6d0f5"
+    ],
     // Markdown
     "markdown.preview.scrollEditorWithPreview": false,
     "markdown.preview.scrollPreviewWithEditor": false,
@@ -88,8 +89,10 @@
     "evenBetterToml.formatter.arrayAutoCollapse": true,
     // YAML
     "redhat.telemetry.enabled": false,
+    // LiveServer
+    "liveServer.settings.host": "localhost",
     // Formatters
-    "[less][javascript][typescript][html][yaml][json][jsonc]": {
+    "[less][javascript][typescript][html][yaml][json][jsonc][css]": {
         "editor.defaultFormatter": "denoland.vscode-deno"
     },
     // Uncategorised

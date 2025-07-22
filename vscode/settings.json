@@ -62,13 +62,7 @@
     // Todo Tree
     "todo-tree.general.showActivityBarBadge": false,
     "todo-tree.tree.showCountsInTree": true,
-    "todo-tree.highlights.useColourScheme": true,
-    "todo-tree.highlights.backgroundColourScheme": [
-        "#e5c890"
-    ],
-    "todo-tree.highlights.foregroundColourScheme": [
-        "#4c4f69"
-    ],
+    "todo-tree.highlights.enabled": false,
     // Markdown
     "markdown.preview.scrollEditorWithPreview": false,
     "markdown.preview.scrollPreviewWithEditor": false,

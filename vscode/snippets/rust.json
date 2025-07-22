@@ -32,9 +32,7 @@
         "body": [
             "#[allow(missing_docs)]",
             "pub fn ${1:error}(source: ${2:source}) -> Self {",
-            "    Self::${3:Variant} {",
-            "        source,$4",
-            "    }",
+            "    Self::${3:Variant}",
             "}$0"
         ]
     },
@@ -50,38 +48,17 @@
         "description": "Create a new error variant"
     },
     "Error source arm": {
-        "prefix": "Self::Variant",
+        "prefix": "Variant",
         "body": [
             "Self::${1:Variant} { source, ..} => Some(source),"
         ],
         "description": "Create an arm that returns the source for a given error variant."
     },
     "Error display arm": {
-        "prefix": "Self::Variant",
+        "prefix": "Variant",
         "body": [
             "Self::${1:Variant} { $2.. } => write!(f, \"$3\"),"
         ],
         "description": "Create an arm that displays a given error variant."
-    },
-    "Map an error struct": {
-        "prefix": "map_err",
-        "body": [
-            "map_err(|source| ${1:Error}::${2:Variant} { source$3 })$0"
-        ],
-        "description": "Map an error to a struct-like enum variant"
-    },
-    "Map an error function": {
-        "prefix": "map_err",
-        "body": [
-            "map_err(|source| ${1:Error}::${2:function}(source$3))$0"
-        ],
-        "description": "Map an error to a enum variant function"
-    },
-    "Map an error source": {
-        "prefix": "map_err",
-        "body": [
-            "map_err(${1:Error}::${2:function})$0"
-        ],
-        "description": "Map an error to a function that only takes the source"
     }
 }

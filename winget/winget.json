@@ -1,99 +1,137 @@
 {
-	"$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-	"CreationDate": "2025-05-31T21:06:47.547-00:00",
-	"Sources": [
+	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
+	"CreationDate" : "2025-07-22T14:58:20.672-00:00",
+	"Sources" : 
+	[
 		{
-			"Packages": [
+			"Packages" : 
+			[
 				{
-					"PackageIdentifier": "7zip.7zip"
+					"PackageIdentifier" : "NexusMods.Vortex"
 				},
 				{
-					"PackageIdentifier": "Docker.DockerDesktop"
+					"PackageIdentifier" : "7zip.7zip"
 				},
 				{
-					"PackageIdentifier": "Git.Git"
+					"PackageIdentifier" : "Docker.DockerDesktop"
 				},
 				{
-					"PackageIdentifier": "Mozilla.Firefox.en-GB"
+					"PackageIdentifier" : "Git.Git"
 				},
 				{
-					"PackageIdentifier": "ONLYOFFICE.DesktopEditors"
+					"PackageIdentifier" : "Mozilla.Firefox.en-GB"
 				},
 				{
-					"PackageIdentifier": "AntibodySoftware.WizTree"
+					"PackageIdentifier" : "AntibodySoftware.WizTree"
 				},
 				{
-					"PackageIdentifier": "Yubico.YubiKeyManagerCLI"
+					"PackageIdentifier" : "JanDeDobbeleer.OhMyPosh"
 				},
 				{
-					"PackageIdentifier": "JanDeDobbeleer.OhMyPosh"
+					"PackageIdentifier" : "Microsoft.VCRedist.2008.x64"
 				},
 				{
-					"PackageIdentifier": "Microsoft.PowerShell"
+					"PackageIdentifier" : "StrawberryPerl.StrawberryPerl"
 				},
 				{
-					"PackageIdentifier": "Valve.Steam"
+					"PackageIdentifier" : "TheDocumentFoundation.LibreOffice"
 				},
 				{
-					"PackageIdentifier": "Microsoft.WSL"
+					"PackageIdentifier" : "Kitware.CMake"
 				},
 				{
-					"PackageIdentifier": "Anki.Anki"
+					"PackageIdentifier" : "Yubico.YubiKeyManagerCLI"
 				},
 				{
-					"PackageIdentifier": "Discord.Discord"
+					"PackageIdentifier" : "Nvidia.PhysX"
 				},
 				{
-					"PackageIdentifier": "Rustlang.Rustup"
+					"PackageIdentifier" : "Microsoft.PowerShell"
 				},
 				{
-					"PackageIdentifier": "Microsoft.VisualStudio.2022.BuildTools"
+					"PackageIdentifier" : "Microsoft.VisualStudio.2022.BuildTools"
 				},
 				{
-					"PackageIdentifier": "KhronosGroup.VulkanSDK"
+					"PackageIdentifier" : "Google.Chrome.EXE"
 				},
 				{
-					"PackageIdentifier": "Microsoft.VisualStudioCode"
+					"PackageIdentifier" : "Microsoft.Edge"
 				},
 				{
-					"PackageIdentifier": "Microsoft.WindowsTerminal"
+					"PackageIdentifier" : "Valve.Steam"
 				},
 				{
-					"PackageIdentifier": "Debian.Debian"
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.6"
 				},
 				{
-					"PackageIdentifier": "ImageMagick.ImageMagick"
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x86"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.Runtime.8"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.DotNet.DesktopRuntime.8"
+				},
+				{
+					"PackageIdentifier" : "Python.Launcher"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.XNARedist"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCRedist.2015+.x64"
+				},
+				{
+					"PackageIdentifier" : "Anki.Anki"
+				},
+				{
+					"PackageIdentifier" : "DenoLand.Deno"
+				},
+				{
+					"PackageIdentifier" : "Discord.Discord"
+				},
+				{
+					"PackageIdentifier" : "Rustlang.Rustup"
+				},
+				{
+					"PackageIdentifier" : "Python.Python.3.13"
+				},
+				{
+					"PackageIdentifier" : "KhronosGroup.VulkanSDK"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VisualStudioCode"
+				},
+				{
+					"PackageIdentifier" : "ImageMagick.Q16"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.AppInstaller"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.UI.Xaml.2.7"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.UI.Xaml.2.8"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.VCLibs.Desktop.14"
+				},
+				{
+					"PackageIdentifier" : "Microsoft.WindowsTerminal"
+				},
+				{
+					"PackageIdentifier" : "Debian.Debian"
 				}
 			],
-			"SourceDetails": {
-				"Argument": "https://cdn.winget.microsoft.com/cache",
-				"Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
-				"Name": "winget",
-				"Type": "Microsoft.PreIndexed.Package"
-			}
-		},
-		{
-			"Packages": [
-				{
-					"PackageIdentifier": "9N7F2SM5D1LR"
-				},
-				{
-					"PackageIdentifier": "9P8DVF1XW02V"
-				},
-				{
-					"PackageIdentifier": "9N2D0P16C80H"
-				},
-				{
-					"PackageIdentifier": "9NTV2DZ11KD9"
-				}
-			],
-			"SourceDetails": {
-				"Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-				"Identifier": "StoreEdgeFD",
-				"Name": "msstore",
-				"Type": "Microsoft.Rest"
+			"SourceDetails" : 
+			{
+				"Argument" : "https://cdn.winget.microsoft.com/cache",
+				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Name" : "winget",
+				"Type" : "Microsoft.PreIndexed.Package"
 			}
 		}
 	],
-	"WinGetVersion": "1.10.390"
+	"WinGetVersion" : "1.11.400"
 }

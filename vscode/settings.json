@@ -3,7 +3,7 @@
     "workbench.colorTheme": "Catppuccin Frappé",
     "workbench.iconTheme": "catppuccin-frappe",
     "window.titleBarStyle": "custom",
-    "catppuccin-icons.hidesExplorerArrows": true,
+    "catppuccin-icons.hidesExplorerArrows": false,
     "catppuccin-icons.specificFolders": true,
     "catppuccin-icons.monochrome": false,
     "catppuccin-icons.associations.languages": {
@@ -39,9 +39,7 @@
     "editor.semanticHighlighting.enabled": true,
     "editor.linkedEditing": false,
     "workbench.editor.empty.hint": "hidden",
-    "[markdown]": {
-        "editor.wordWrap": "wordWrapColumn"
-    },
+    "editor.accessibilitySupport": "off",
     // General VSCode
     "settingsSync.ignoredSettings": [
         "workbench.colorTheme",
@@ -66,10 +64,10 @@
     "todo-tree.tree.showCountsInTree": true,
     "todo-tree.highlights.useColourScheme": true,
     "todo-tree.highlights.backgroundColourScheme": [
-        "#626880"
+        "#e5c890"
     ],
     "todo-tree.highlights.foregroundColourScheme": [
-        "#c6d0f5"
+        "#4c4f69"
     ],
     // Markdown
     "markdown.preview.scrollEditorWithPreview": false,
@@ -77,8 +75,6 @@
     // Harper
     "harper.dialect": "British",
     "harper.linters.SpelledNumbers": true,
-    "harper.linters.OxfordComma": true,
-    "harper.linters.ToDoHyphen": false,
     // TOML
     "evenBetterToml.formatter.allowedBlankLines": 1,
     "evenBetterToml.formatter.reorderKeys": true,
@@ -87,10 +83,6 @@
     "evenBetterToml.formatter.columnWidth": 100,
     "evenBetterToml.formatter.arrayAutoExpand": true,
     "evenBetterToml.formatter.arrayAutoCollapse": true,
-    // YAML
-    "redhat.telemetry.enabled": false,
-    // LiveServer
-    "liveServer.settings.host": "localhost",
     // Formatters
     "[less][javascript][typescript][html][yaml][json][jsonc][css]": {
         "editor.defaultFormatter": "denoland.vscode-deno"

@@ -25,8 +25,11 @@
         "level": "info"
     },
     "installBehavior": {
-        "portablePackageUserRoot": "C:/Users/trent/Files/Packages/WinGet",
+        "portablePackageUserRoot": "C:/Users/trent/Files/Packages/WinGet/",
         "portablePackageMachineRoot": "C:/Program Files/Packages/WinGet/",
-        "defaultInstallRoot": "C:/Users/trent/Files/Packages/WinGet/"
+        "defaultInstallRoot": "C:/Users/trent/Files/Packages/WinGet/",
+        "preferences": {
+            "scope": "user"
+        }
     }
 }

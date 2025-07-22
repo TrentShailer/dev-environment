@@ -4,14 +4,13 @@
         "Catppuccin.catppuccin-vsc-icons",
         "denoland.vscode-deno",
         "tamasfe.even-better-toml",
-        "mkxml.vscode-filesize",
         "elijah-potter.harper",
         "kejun.markdown-alert",
+        "bierner.markdown-checkbox",
         "bierner.markdown-preview-github-styles",
         "bierner.markdown-mermaid",
         "rust-lang.rust-analyzer",
         "shader-slang.slang-language-extension",
-        "Gruntfuggly.todo-tree",
-        "redhat.vscode-yaml"
+        "Gruntfuggly.todo-tree"
     ]
 }

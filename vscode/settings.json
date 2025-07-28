@@ -69,6 +69,7 @@
     // Harper
     "harper.dialect": "British",
     "harper.linters.SpelledNumbers": true,
+    "harper.userDictPath": "~/Files/Personal/dev-environment/dictionary.txt",
     // TOML
     "evenBetterToml.formatter.allowedBlankLines": 1,
     "evenBetterToml.formatter.reorderKeys": true,
